@@ -12,12 +12,16 @@
 }
 
 /* COLORS */
-.bg-main {
+.bg-color-main {
   background-color: var(--accent-main);
 }
 
-.bg-main-dark {
+.bg-color-main-dark {
   background-color: var(--accent-main-dark);
+}
+
+.text-color-main {
+  color: var(--accent-main);
 }
 
 /* CONTAINERS */

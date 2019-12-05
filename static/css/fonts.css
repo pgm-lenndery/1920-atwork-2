@@ -46,3 +46,11 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'NeueHaasGroteskDisp Pro';
+    src: local('Neue Haas Grotesk Display Pro 65 Medium'), local('NHaasGroteskDSPro-65Md'),
+        url('../fonts/NHaasGroteskDSPro-40Rg.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
