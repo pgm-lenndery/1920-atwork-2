@@ -16,6 +16,9 @@
   - [ ] Opmaak
   - [ ] Mapbox kaart tonen
 
+- [ ] Contact
+  - [ ] Opmaak
+
 ### Excelleren
 
 - [ ] Lazy loading
