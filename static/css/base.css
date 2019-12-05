@@ -1,0 +1,70 @@
+:root {
+  --accent-main: #f7505e;
+  --accent-main-dark: #e54654;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'NeueHaasGroteskDisp Pro';
+}
+
+/* COLORS */
+.bg-main {
+  background-color: var(--accent-main);
+}
+
+.bg-main-dark {
+  background-color: var(--accent-main-dark);
+}
+
+/* CONTAINERS */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container-sm {
+  max-width: 950px;
+}
+
+/* HEADERS */
+h1 {
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/*# sourceMappingURL=base.css.map */
