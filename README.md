@@ -1,6 +1,8 @@
-# 1920-atwork-2
+# 1920-atwork-1
+## Case 2
 [Case](https://arteveldehogeschool.instructure.com/courses/10239/assignments/32044) | 
 
+### Basis
 - [ ] Home
   - [ ] Dynamisch ingeladen
   - [ ] Opmaak
@@ -14,7 +16,7 @@
   - [ ] Opmaak
   - [ ] Mapbox kaart tonen
 
-## Excelleren
+### Excelleren
 
 - [ ] Lazy loading
 - [ ] Animatie scrollen content tonen
