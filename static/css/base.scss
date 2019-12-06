@@ -25,6 +25,14 @@
     color: var(--accent-main)
 }
 
+ul.menu-list {
+    list-style: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
 /* CONTAINERS */
 .container {
     width: 100%;
@@ -52,6 +60,15 @@ h4 {
     font-size: 1.5rem;
 }
 
+small, .small {
+    font-size: small;
+
+    * {
+        font-size: small;
+    }
+
+}
+
 /* FLEXBOX */
 .d-flex {display:flex}
 .flex-col {flex-direction: column;}
@@ -60,7 +77,7 @@ h4 {
 .align-items-center {align-items: center;}
 
 /* MARGIN */
-$sizes: 10, 20, 30, 40, 50, 70, 90, 100;
+$sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
 @each $size in $sizes {
   .m-#{$size} {
     margin: $size ;
@@ -88,6 +105,33 @@ $sizes: 10, 20, 30, 40, 50, 70, 90, 100;
 
 }
 
+/* PADDING */
+@each $size in $sizes {
+    .p-#{$size} {
+      padding: $size ;
+    }
+    .pl-#{$size} {
+      padding-left: #{$size}px;
+    }
+    .pr-#{$size} {
+      padding-right: #{$size}px;
+    }
+    .pt-#{$size} {
+      padding-top: #{$size}px;
+    }
+    .pb-#{$size} {
+      padding-bottom: #{$size}px;
+    }
+    .px-#{$size} {
+      padding-left: #{$size}px;
+      padding-right: #{$size}px;
+    }
+    .py-#{$size} {
+      padding-top: #{$size}px;
+      padding-bottom: #{$size}px;
+    }
+}
+
 /* SECTIONS */
 [data-section='hero'] {
     h4 {
@@ -100,6 +144,14 @@ $sizes: 10, 20, 30, 40, 50, 70, 90, 100;
 footer {
     [data-section="footer-info"] {
         color: var(--accent-main)
+    }
+
+    [data-label="footer-legal"] {
+        .menu-list {
+            li {
+                margin-right: 10px;
+            }
+        }
     }
 }
 
