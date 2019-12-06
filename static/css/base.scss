@@ -1,28 +1,36 @@
 :root{
-    --accent-main: #f7505e;
-    --accent-main-dark: #e54654;
+  --accent-main: #f7505e;
+  --accent-main-dark: #e54654;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'NeueHaasGroteskDisp Pro';
-    font-size: 1rem;
-    line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'NeueHaasGroteskDisp Pro';
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
 }
 
 /* COLORS */
 .bg-color-main {
-    background-color: var(--accent-main);
+  background-color: var(--accent-main);
 }
 
 .bg-color-main-dark {
-    background-color: var(--accent-main-dark);
+  background-color: var(--accent-main-dark);
 }
 
 .text-color-main {
-    color: var(--accent-main)
+  color: var(--accent-main)
 }
 
 ul.menu-list {
@@ -34,30 +42,26 @@ ul.menu-list {
 }
 
 /* CONTAINERS */
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
 
 .container-sm {
-    max-width: 950px;
+  max-width: 950px;
 }
 
 /* HEADERS */
 h1 {
-    font-size: 2.1rem;
-    text-transform: uppercase;
-    font-weight: 900;
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #fff;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
 h4 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 small, .small {
@@ -134,11 +138,13 @@ $sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
 
 /* SECTIONS */
 [data-section='hero'] {
-    h4 {
-        font-size: 1.285rem;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-    }
+  h4 {
+      font-size: 1.285rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: #fff;
+  }
 }
 
 footer {
@@ -156,26 +162,135 @@ footer {
 }
 
 /* MEDIA QUERIES */
-@media (min-width: 576px) {
-    .container {
-        max-width: 540px;
+.top-bar {
+  padding: 5px 0;
+  background: var(--accent-main-dark);
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 13px 0;
+
+  .text-widget {
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
 }
 
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
+.align-right {
+  text-align: right;
 }
 
-@media (min-width: 992px) {
-    .container {
-        max-width: 960px;
+header {
+  background: var(--accent-main);
+  padding-bottom: 16px;
+  .main-nav {
+    .navigation {
+      font-size: 0.875rem;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-top: 17px;
     }
+  
+    .logo a {
+      width: 100%;
+  
+      img {
+        width: 186px;
+        height: auto;
+      }
+    }
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          text-transform: uppercase;
+          font-weight: 600;
+
+
+          a {
+            text-decoration: none;
+            color: hsla(0,0%,100%,.75);
+            opacity: .6;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    hr {
+      border: none;
+      border-bottom: 1px solid hsla(0,0%,100%,.4);
+      padding-top: 8px;
+      padding-bottom: 10px;
+    }
+  }
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
+.breadcrumb {
+  margin-bottom: 25px;
+  p {
+    font-size: 1rem;
+    a {
+      text-decoration: none;
+      color: hsla(0,0%,100%,.75);
+      opacity: 0.6;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+
+    span {
+      color: #fff;
+      font-weight: 600;
+
+      &::before {
+        padding: 0 10px;
+        font-size: 1.2rem;
+        content: '\203A';
+      }
+
+      &.first::before {
+        color: hsla(0,0%,100%,.75); 
+      }
+    }
+  }
+
 }
+
+/* MEDIA QUERIES */
+// @media (min-width: 576px) {
+//     .container {
+//         max-width: 540px;
+//     }
+// }
+
+// @media (min-width: 768px) {
+//     .container {
+//         max-width: 720px;
+//     }
+// }
+
+// @media (min-width: 992px) {
+//     .container {
+//         max-width: 960px;
+//     }
+// }
+
+// @media (min-width: 1200px) {
+//     .container {
+//         max-width: 1140px;
+//     }
+// }
