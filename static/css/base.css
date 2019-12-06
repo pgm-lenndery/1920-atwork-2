@@ -11,6 +11,14 @@
   font-family: 'NeueHaasGroteskDisp Pro';
 }
 
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+}
+
 /* COLORS */
 .bg-color-main {
   background-color: var(--accent-main);
@@ -25,12 +33,6 @@
 }
 
 /* CONTAINERS */
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 .container-sm {
   max-width: 950px;
 }
@@ -55,8 +57,10 @@ h4 {
 /* SECTIONS */
 [data-section='hero'] h4 {
   font-size: 1.285rem;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 16px;
+  color: #fff;
 }
 
 .top-bar {
@@ -86,12 +90,12 @@ header {
 }
 
 header .main-nav .navigation {
+  font-size: 0.875rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 17px 0;
+  padding-top: 17px;
 }
 
 header .main-nav .logo a {
@@ -128,28 +132,45 @@ header .main-nav nav ul li a:hover {
   opacity: 1;
 }
 
+header .main-nav hr {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+
+.breadcrumb {
+  margin-bottom: 25px;
+}
+
+.breadcrumb p {
+  font-size: 1rem;
+}
+
+.breadcrumb p a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  opacity: 0.6;
+}
+
+.breadcrumb p a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb p span {
+  color: #fff;
+  font-weight: 600;
+}
+
+.breadcrumb p span::before {
+  padding: 0 10px;
+  font-size: 1.2rem;
+  content: '\203A';
+}
+
+.breadcrumb p span.first::before {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 /* MEDIA QUERIES */
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
 /*# sourceMappingURL=base.css.map */
