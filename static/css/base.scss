@@ -81,10 +81,10 @@ small, .small {
 .align-items-center {align-items: center;}
 
 /* MARGIN */
-$sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
+$sizes: 0, 10, 16, 24, 30, 40, 50, 70, 90, 100;
 @each $size in $sizes {
   .m-#{$size} {
-    margin: $size ;
+    margin: #{$size}px;
   }
   .ml-#{$size} {
     margin-left: #{$size}px;
@@ -112,7 +112,7 @@ $sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
 /* PADDING */
 @each $size in $sizes {
     .p-#{$size} {
-      padding: $size ;
+      padding: #{$size}px;
     }
     .pl-#{$size} {
       padding-left: #{$size}px;
@@ -147,6 +147,10 @@ $sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
   }
 }
 
+main {
+    min-height: calc(100vh - (50px + 160px + 203px));
+}
+
 footer {
     [data-section="footer-info"] {
         color: var(--accent-main)
@@ -161,7 +165,6 @@ footer {
     }
 }
 
-/* MEDIA QUERIES */
 .top-bar {
   padding: 5px 0;
   background: var(--accent-main-dark);
@@ -188,6 +191,7 @@ footer {
 header {
   background: var(--accent-main);
   padding-bottom: 16px;
+
   .main-nav {
     .navigation {
       font-size: 0.875rem;
@@ -271,26 +275,26 @@ header {
 }
 
 /* MEDIA QUERIES */
-// @media (min-width: 576px) {
-//     .container {
-//         max-width: 540px;
-//     }
-// }
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
 
-// @media (min-width: 768px) {
-//     .container {
-//         max-width: 720px;
-//     }
-// }
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
 
-// @media (min-width: 992px) {
-//     .container {
-//         max-width: 960px;
-//     }
-// }
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
 
-// @media (min-width: 1200px) {
-//     .container {
-//         max-width: 1140px;
-//     }
-// }
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

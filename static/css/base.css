@@ -100,7 +100,7 @@ small *, .small * {
 
 /* MARGIN */
 .m-0 {
-  margin: 0;
+  margin: 0px;
 }
 
 .ml-0 {
@@ -130,7 +130,7 @@ small *, .small * {
 }
 
 .m-10 {
-  margin: 10;
+  margin: 10px;
 }
 
 .ml-10 {
@@ -159,38 +159,68 @@ small *, .small * {
   margin-bottom: 10px;
 }
 
-.m-20 {
-  margin: 20;
+.m-16 {
+  margin: 16px;
 }
 
-.ml-20 {
-  margin-left: 20px;
+.ml-16 {
+  margin-left: 16px;
 }
 
-.mr-20 {
-  margin-right: 20px;
+.mr-16 {
+  margin-right: 16px;
 }
 
-.mt-20 {
-  margin-top: 20px;
+.mt-16 {
+  margin-top: 16px;
 }
 
-.mb-20 {
-  margin-bottom: 20px;
+.mb-16 {
+  margin-bottom: 16px;
 }
 
-.mx-20 {
-  margin-left: 20px;
-  margin-right: 20px;
+.mx-16 {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
-.my-20 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.my-16 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.m-24 {
+  margin: 24px;
+}
+
+.ml-24 {
+  margin-left: 24px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mx-24 {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.my-24 {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .m-30 {
-  margin: 30;
+  margin: 30px;
 }
 
 .ml-30 {
@@ -220,7 +250,7 @@ small *, .small * {
 }
 
 .m-40 {
-  margin: 40;
+  margin: 40px;
 }
 
 .ml-40 {
@@ -250,7 +280,7 @@ small *, .small * {
 }
 
 .m-50 {
-  margin: 50;
+  margin: 50px;
 }
 
 .ml-50 {
@@ -280,7 +310,7 @@ small *, .small * {
 }
 
 .m-70 {
-  margin: 70;
+  margin: 70px;
 }
 
 .ml-70 {
@@ -310,7 +340,7 @@ small *, .small * {
 }
 
 .m-90 {
-  margin: 90;
+  margin: 90px;
 }
 
 .ml-90 {
@@ -340,7 +370,7 @@ small *, .small * {
 }
 
 .m-100 {
-  margin: 100;
+  margin: 100px;
 }
 
 .ml-100 {
@@ -371,7 +401,7 @@ small *, .small * {
 
 /* PADDING */
 .p-0 {
-  padding: 0;
+  padding: 0px;
 }
 
 .pl-0 {
@@ -401,7 +431,7 @@ small *, .small * {
 }
 
 .p-10 {
-  padding: 10;
+  padding: 10px;
 }
 
 .pl-10 {
@@ -430,38 +460,68 @@ small *, .small * {
   padding-bottom: 10px;
 }
 
-.p-20 {
-  padding: 20;
+.p-16 {
+  padding: 16px;
 }
 
-.pl-20 {
-  padding-left: 20px;
+.pl-16 {
+  padding-left: 16px;
 }
 
-.pr-20 {
-  padding-right: 20px;
+.pr-16 {
+  padding-right: 16px;
 }
 
-.pt-20 {
-  padding-top: 20px;
+.pt-16 {
+  padding-top: 16px;
 }
 
-.pb-20 {
-  padding-bottom: 20px;
+.pb-16 {
+  padding-bottom: 16px;
 }
 
-.px-20 {
-  padding-left: 20px;
-  padding-right: 20px;
+.px-16 {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-.py-20 {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
+.pl-24 {
+  padding-left: 24px;
+}
+
+.pr-24 {
+  padding-right: 24px;
+}
+
+.pt-24 {
+  padding-top: 24px;
+}
+
+.pb-24 {
+  padding-bottom: 24px;
+}
+
+.px-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.py-24 {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .p-30 {
-  padding: 30;
+  padding: 30px;
 }
 
 .pl-30 {
@@ -491,7 +551,7 @@ small *, .small * {
 }
 
 .p-40 {
-  padding: 40;
+  padding: 40px;
 }
 
 .pl-40 {
@@ -521,7 +581,7 @@ small *, .small * {
 }
 
 .p-50 {
-  padding: 50;
+  padding: 50px;
 }
 
 .pl-50 {
@@ -551,7 +611,7 @@ small *, .small * {
 }
 
 .p-70 {
-  padding: 70;
+  padding: 70px;
 }
 
 .pl-70 {
@@ -581,7 +641,7 @@ small *, .small * {
 }
 
 .p-90 {
-  padding: 90;
+  padding: 90px;
 }
 
 .pl-90 {
@@ -611,7 +671,7 @@ small *, .small * {
 }
 
 .p-100 {
-  padding: 100;
+  padding: 100px;
 }
 
 .pl-100 {
@@ -649,6 +709,10 @@ small *, .small * {
   color: #fff;
 }
 
+main {
+  min-height: calc(100vh - (50px + 160px + 203px));
+}
+
 footer [data-section="footer-info"] {
   color: var(--accent-main);
 }
@@ -657,7 +721,6 @@ footer [data-label="footer-legal"] .menu-list li {
   margin-right: 10px;
 }
 
-/* MEDIA QUERIES */
 .top-bar {
   padding: 5px 0;
   background: var(--accent-main-dark);
@@ -768,4 +831,27 @@ header .main-nav hr {
 }
 
 /* MEDIA QUERIES */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 /*# sourceMappingURL=base.css.map */
