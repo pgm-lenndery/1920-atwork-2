@@ -11,23 +11,18 @@
             media: [
               {
                 src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
               },
               {
                 src: '../images/te-koop/wingene/IMG_9624 copy.jpg',
-                isThumb: false,
               },
               {
                 src: '../images/te-koop/wingene/IMG_9624-cover.jpg',
-                isThumb: false,
               },
               {
                 src: '../images/te-koop/wingene/IMG_9624-cover2.jpeg',
-                isThumb: true,
               },
               {
                 src: '../images/te-koop/wingene/IMG_9624.JPG',
-                isThumb: false,
               },
             ]
           }
@@ -36,6 +31,16 @@
       {
         title: 'nieuwbouwwoning wingene',
         intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
+        media: [
+          {
+            src: '../images/te-koop/oostveld/oostveld-01.jpg',
+            isThumb: true
+          },
+          {
+            src: '../images/te-koop/oostveld/oostveld-02.jpg',
+            isThumb: false
+          },
+        ],
         properties: [
           {
             price: 292500,
@@ -43,23 +48,6 @@
             media: [
               {
                 src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624 copy.jpg',
-                isThumb: false,
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624-cover.jpg',
-                isThumb: false,
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624-cover2.jpeg',
-                isThumb: true,
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624.JPG',
-                isThumb: false,
               },
             ]
           }
@@ -106,20 +94,34 @@
     
     cacheElements() {
       this.cardsTeKoop = document.querySelector('[data-label="te-koop-items"');
+      let tempStr, meta;
     },
 
     generateItemsTekoop() {
-      // console.log(this.cardsTeKoop)
-      let tempStr;
       if (this.cardsTeKoop !== null) {
-        database.premises.forEach((item,index) => {
-          console.log(`item: ${item.title} - n°${index}`)
-          tempStr += `
+        database.premises.forEach((item) => {
+          console.log(`${item.title}`)
+
+          if (item.properties.length == 1) {
+            console.log(`\t 1 lot`)
+            if (item.properties[0].sold == true) {
+              console.log(`\t item sold`);
+              this.meta = 'verkocht';
+            } else {
+              console.log(`\t item price = ${item.properties[0].price}`);
+              this.meta = item.properties[0].price;
+            }
+          } else {
+            console.log(`\t meerdere loten`)
+            this.meta = `${item.properties.length} loten`;
+          }
+
+          this.tempStr += `
             <div class="flex-grid-item card premise">
               <div class="card-head">
                   <img src="../static/images/te-koop/wingene/IMG_9624-cover2.jpeg" alt="">
                   <div class="meta">
-                      verkocht
+                    ${this.meta}
                   </div>
               </div>
               <div class="card-body p-16">
@@ -129,7 +131,7 @@
             </div>
           `
         });
-        this.cardsTeKoop.innerHTML = tempStr;
+        this.cardsTeKoop.innerHTML = this.tempStr;
       }
     }
   }
