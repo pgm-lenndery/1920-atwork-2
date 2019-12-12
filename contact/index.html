@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Matthias Talloen - bouwpromoter en algemene aannemer</title>
+    <script src="https://kit.fontawesome.com/9a8699aa96.js" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="../static/css/main.css">
 </head>
 <body>
@@ -35,7 +38,12 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="col-6 btn-hamburger-container">
+                        <div class="btn-hamburger">
+                            <i class="fas fa-bars "></i>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 nav-container">
                         <nav>
                             <ul>
                                 <li><a href="../te-koop/">Te koop</a></li>
@@ -46,7 +54,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 line-nav">
                         <hr>
                     </div>
                 </div>
@@ -63,11 +71,56 @@
             </div>
         </div>
     </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="map-contact" id="map">
+                        
+                    </div>
+                    <div class="contact-info">
+                        <p>
+                            <strong>Matthias Talloen</strong><br>
+                            Hazelaarstraat 4<br>
+                            8020 Oostkamp
+                        </p>
+                        <p>
+                            <a href="tel:0495252263">0495 25 22 63</a><br>
+                            <a href="mailto:info@matthiastalloen.be">info@matthiastalloen.be</a>
+                        </p>
+                        <p>BE 0896.739.858</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="intro">
+                        <h2>Contacteer ons</h2>
+                        <p>Laat ons weten hoe we je kunnen bereiken</p>
+                        <hr>
+                    </div>
+                    <form action="">
+                        <div class="contact-info-input d-flex">
+                            <div class="name">
+                                <label for="name">Naam <span>*</span></label>
+                                <input type="text" class="name" name="name" id="name">
+                            </div>
+                            <div class="email">
+                                <label for="name">E-mailadres <span>*</span></label>
+                                <input type="email" class="email" name="email" id="name">
+                            </div>
+                        </div>
+                        <label for="message">Uw bericht <span>*</span></label>
+                        <textarea class="message" name="message" id="message"></textarea>
+                        <input type="submit" class="send" name="send" id="send" value="Verzenden">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer>
         <div class="container">
             <div class="row justify-content-between" data-section="footer-info">
                 <div class="col">
-                    <img src="./static/images/logo/logo_talloen_footer.svg" alt="" width="210">
+                    <img src="../static/images/logo/logo_talloen_footer.svg" alt="" width="210">
                 </div>
                 <div class="col">
                     Hazelaarstraat 4, 8020 Oostkamp<br>
@@ -75,8 +128,8 @@
                     BE 0896.739.858                   
                 </div>
                 <div class="col-auto d-flex align-items-center">
-                    <img class="mr-40" src="./static/images/logo/logo_bouwunie.svg" alt="" width="143">
-                    <img src="./static/images/logo/logo_confedereatie-bouw.svg" alt="" width="139">
+                    <img class="mr-40" src="../static/images/logo/logo_bouwunie.svg" alt="" width="143">
+                    <img src="../static/images/logo/logo_confedereatie-bouw.svg" alt="" width="139">
                 </div>
             </div>
             <div class="row mt-40 mb-20">
@@ -99,5 +152,7 @@
             </div>
         </div>
     </footer>
+    <script src="../static/js/map-config.js"></script>
+    <script src="../static/js/main.js"></script>
 </body>
 </html>
