@@ -120,61 +120,6 @@
           }
         ],
       },
-      {
-        title: 'nieuwbouwwoning wingene',
-        intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
-        media: [
-          {
-            src: '../images/te-koop/oostveld/oostveld-01.jpg',
-            isThumb: true
-          },
-          {
-            src: '../images/te-koop/oostveld/oostveld-02.jpg',
-            isThumb: false
-          },
-        ],
-        properties: [
-          {
-            price: 292500,
-            sold: false,
-            media: [
-              {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-              },
-            ]
-          }
-        ],
-      },
-      {
-        title: 'appartementen in oostveld',
-        intro: 'vijf nieuwbouwappartementen in het rustige oostveld',
-        properties: [
-          {
-            title: 'appartement 101',
-            bedrooms: '2',
-            price: 220000,
-            sold: false,
-            media: [
-              {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
-              },
-            ]
-          },
-          {
-            title: 'appartement 201',
-            bedrooms: '1',
-            price: 220000,
-            sold: true,
-            media: [
-              {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
-              },
-            ]
-          },
-        ],
-      },
     ]
   }
 
@@ -195,7 +140,9 @@
           this.generateThumbPath(item.properties[0].media);
 
           console.log(`premise ${++index} = ${item.title}`)
-          if (item.properties.length == 1) { 
+          item.media !== undefined ? console.log(this.generateThumbPath(item.media)) : console.log('null');
+          
+          if (item.properties.length == 1) {
             // 1 LOT
             item.properties[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ',item.properties[0].price);
           } else { 
@@ -204,7 +151,7 @@
           }
 
           tempStr += `
-            <div class="flex-grid-item card premise">
+            <a class="flex-grid-item card premise" href="">
               <div class="card-head">
                   <img src="${this.tumbPath.replace('../', '../static/')}" alt="">
                   <div class="meta">
@@ -215,7 +162,7 @@
                   <h3>Nieuwbouwwoning wingene</h3>
                   <p>Nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.</p>
               </div>
-            </div>
+            </a>
           `
         });
         this.cardsTeKoop.innerHTML = tempStr;

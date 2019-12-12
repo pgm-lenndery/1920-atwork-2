@@ -8,6 +8,24 @@
 
     .flex-grid .flex-grid-item.card {
       box-shadow: 0 0 20px rgba(0,0,0,.17);
+      position: relative;
+      transition: all .2s ease-in-out;
+
+        &::before {
+            position: absolute;
+            left: calc((31px/2)*-1);
+            top: 10px;
+            display: block;
+            content: " ";
+            background-image: url(../../images/ornament_rood.svg);
+            width: 31px;
+            height: 55px;   
+            z-index: 1;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
 
         .card-head {
             position: relative;
@@ -15,7 +33,7 @@
             img {
                 object-fit: cover;
                 width: 100%;
-                height: 100%;
+                height: 250px;
                 margin-bottom: -7px;
             }
 
