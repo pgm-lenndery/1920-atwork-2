@@ -7,7 +7,7 @@
     <title>Matthias Talloen - bouwpromoter en algemene aannemer</title>
     <script src="https://ce.lennertderyck.be/library/elements.js"></script>
 
-    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/main.min.css">
 </head>
 <body>
     <div class="top-bar">
@@ -67,20 +67,53 @@
         </div>
     </header>
     <main>
-        <section data-section="card-filter">
+        <section data-section="card-filter" class="py-30">
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <p>Type vastgoed</p>
+                <div class="row filter" data-collapse-group="cardsFilterGroup">
+                    <div class="col-12 col-md mb-16 mb-md-0">
+                        <p class="mb-8 filter-label">Type vastgoed</p>
+                        <div class="selectric">
+                            <button class="selectric-label" data-collapse-trigger="cardsFilterType">Open selectie</button>
+                            <div class="selectric-list" data-collapse-target="cardsFilterType" data-collapse-parent="cardsFilterGroup">
+                                <ul>
+                                    <li class="current">Alle types</li>
+                                    <li>Type 1</li>
+                                    <li>Type 2</li>
+                                    <li>Type 3</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>Type vastgoed</p>
+                    <div class="col-12 col-md mb-16 mb-md-0">
+                        <p class="mb-8 filter-label">Gemeente</p>
+                        <div class="selectric">
+                            <button class="selectric-label" data-collapse-trigger="cardsFilterCity">Open selectie</button>
+                            <div class="selectric-list" data-collapse-target="cardsFilterCity" data-collapse-parent="cardsFilterGroup">
+                                <ul>
+                                    <li class="current">Alle steden</li>
+                                    <li>Type 1</li>
+                                    <li>Type 2</li>
+                                    <li>Type 3</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p>Type vastgoed</p>
+                    <div class="col-12 col-md mb-16 mb-md-0">
+                        <p class="mb-8 filter-label">Prijs</p>
+                        <div class="selectric">
+                            <button class="selectric-label" data-collapse-trigger="cardsFilterPrice">Open selectie</button>
+                            <div class="selectric-list" data-collapse-target="cardsFilterPrice" data-collapse-parent="cardsFilterGroup">
+                                <ul>
+                                    <li class="current">Alle steden</li>
+                                    <li>Type 1</li>
+                                    <li>Type 2</li>
+                                    <li>Type 3</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button class="btn">zoeken</button>
+                    <div class="col-12 col-md d-flex align-items-end">
+                        <button class="btn" data-label="filterSearch">Zoeken</button>
                     </div>
                 </div>
             </div>
@@ -134,5 +167,6 @@
     </footer>
 
     <script src="../static/js/main.js"></script>
+    <script src="../static/js/collapse.js"></script>
 </body>
 </html>
