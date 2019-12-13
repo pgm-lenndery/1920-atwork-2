@@ -188,10 +188,28 @@
             ]
           }
         ],
+        city: 'wingene',
       },
       {
-        title: 'nieuwbouwwoning wingene',
-        intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
+        title: 'appartementen in oostveld',
+        intro: 'vijf nieuwbouwappartementen in het rustige oostveld',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/oostveld/oostveld-01.jpg',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          street: 'Tinhoutstraat',
+          number: 120,
+          zipCode: 8730,
+          city: 'Beernem',
+          coordinates: {
+            lat: 51.161008,
+            lng: 3.390056,
+          }
+        },
         properties: [
           {
             price: 292500,
@@ -212,76 +230,67 @@
         ],
       },
       {
-        title: 'appartementen in oostveld',
-        intro: 'vijf nieuwbouwappartementen in het rustige oostveld',
+        title: 'Alleenstaande pastoriewoning in Wingene',
+        intro: 'Ruime alleenstande woning',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/wingene2/IMG_9624-cover-600x445.jpg',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          
+        },
         properties: [{
-            title: 'appartement 101',
-            bedrooms: '2',
-            price: 220000,
-            sold: false,
-            media: [
-              {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
-                note: '',
-              },
-            ],
-            type: 'appartement'
-          },
-          {
-            title: 'appartement 201',
-            bedrooms: '1',
             price: 220000,
             sold: true,
             media: [
               {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
+                src: '../images/te-koop/wingene2/IMG_9624-cover-600x445.jpg',
+                isThumb: true,
                 note: '',
               },
             ],
             type: 'appartement'
           },
         ],
-        city: 'oostveld',
+        city: 'wingene',
       },
       {
-        title: 'nieuwbouwwoning wingene',
-        intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
+        title: 'Nieuwbouwwoningen Doomkerke',
+        intro: 'Drie geschakelde nieuwbouwwoningen',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/doomkerke/doomkerkerpano-600x445.JPG',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          street: 'Brugsesteenweg',
+          number: 79,
+          zipCode: 8755,
+          city: 'Ruislede',
+          coordinates: {
+            lat: 51.076999,
+            lng: 3.353159,
+          }
+        },
         properties: [
           {
             price: 292500,
-            sold: false,
+            sold: true,
             media: [
               {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624 copy.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624-cover.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624-cover2.jpeg',
+                src: '../images/te-koop/doomkerke/doomkerkerpano-600x445.JPG',
                 isThumb: true,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624.JPG',
-                isThumb: false,
                 note: '',
               },
             ],
           type: 'huis'
         }],
-        city: 'wingene',
+        city: 'ruislede',
       },
     ]
   }
@@ -387,8 +396,8 @@
                   </div>
               </div>
               <div class="card-body p-16">
-                  <h3>Nieuwbouwwoning wingene</h3>
-                  <p>Nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.</p>
+                  <h3>${item.title}</h3>
+                  <p>${item.intro}</p>
               </div>
             </a>
           `
