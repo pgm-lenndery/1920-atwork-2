@@ -1333,6 +1333,13 @@ h2 {
   line-height: 1.8;
 }
 
+h3 {
+  font-weight: 700;
+  font-size: 2.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-main);
+}
+
 h4 {
   font-size: 1.5rem;
 }
@@ -4689,13 +4696,6 @@ textarea {
   left: -25px;
 }
 
-.detail-head-pic .stripes div {
-  width: 50px;
-  height: 10px;
-  margin-bottom: 10px;
-  background: #fff;
-}
-
 .detail-description p, .detail-description ul {
   margin-bottom: 1rem;
 }
@@ -4738,6 +4738,39 @@ textarea {
 .detail-properties table tbody tr th, .detail-properties table tbody tr td {
   border-bottom: 0.1px solid #dedede;
   padding: 0.375rem;
+}
+
+.detail-card {
+  display: block;
+  margin-top: 20px;
+}
+
+.detail-card div.detail-image {
+  position: relative;
+}
+
+.detail-card div.detail-image::before {
+  position: absolute;
+  left: -15.5px;
+  top: 10px;
+  display: block;
+  content: " ";
+  background-image: url(../images/ornament_rood.svg);
+  width: 31px;
+  height: 55px;
+}
+
+.detail-card div.detail-image img {
+  width: 100%;
+}
+
+.detail-card div.detail-image .note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  background: var(--accent-main);
+  padding: 10px 14px;
 }
 
 * {

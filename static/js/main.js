@@ -20,7 +20,7 @@
           </ul>
           <p>Droomt u van een eigen stek in de groene omgeving van Wingene? We helpen u graag verder. Contacteer ons op het nummer <a href="tel:+32495252263">0495 25 22 63</a> of stuur ons uw vraag via <a href="https://matthiastalloen.be/wp-admin/info@matthiastalloen.be">info@matthiastalloen.be</a>.</p>
         `,
-        headImage: '../../static/images/te-koop/wingene/image-detail-head.jpg',
+        headImage: '../../static/images/te-koop/wingene/image-detail-head.jpeg',
         propertiesBuilding: [
           {
             name: 'Slaapkamers',
@@ -81,28 +81,13 @@
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-2.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
                 src: '../../static/images/te-koop/wingene/img-3.jpg',
                 isThumb: false,
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-4.jpg',
-                isThumb: false,               
-                note: '',
-              },
-              {
                 src: '../../static/images/te-koop/wingene/img-5.jpg',
-                isThumb: false,               
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-6.jpg',
-                isThumb: false,               
+                isThumb: false,
                 note: '',
               },
               {
@@ -111,13 +96,59 @@
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-8.jpg',
+                src: '../../static/images/te-koop/wingene/img-9.jpg',
+                isThumb: false,               
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-11.jpg',
+                isThumb: false,               
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-13.jpg',
+                isThumb: false,               
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-15.jpg',
                 isThumb: false,              
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-9.jpg',
+                src: '../../static/images/te-koop/wingene/img-17.jpg',
+                isThumb: false,              
+                note: 'Achtergevel in opbouw',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-20.jpg',
                 isThumb: false,     
+                note: 'Voorgevel in opbouw',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-22.jpg',
+                isThumb: false,        
+                note: 'Voorgevel in opbouw',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-2.jpg',
+                isThumb: false,         
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-4.jpg',
+                isThumb: false,     
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-6.jpg',
+                isThumb: false,  
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-8.jpg',
+                isThumb: false,
+                
                 note: '',
               },
               {
@@ -126,64 +157,33 @@
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-11.jpg',
-                isThumb: false,         
-                note: '',
-              },
-              {
                 src: '../../static/images/te-koop/wingene/img-12.jpg',
-                isThumb: false,     
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-13.jpg',
-                isThumb: false,  
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-14.jpg',
-                isThumb: false,
-                
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-15.jpg',
-                isThumb: false,        
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-16.jpg',
                 isThumb: false,           
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-17.jpg',
+                src: '../../static/images/te-koop/wingene/img-14.jpg',
+                isThumb: false,   
+                note: '',
+              },
+              {
+                src: '../../static/images/te-koop/wingene/img-16.jpg',
                 isThumb: false,   
                 note: '',
               },
               {
                 src: '../../static/images/te-koop/wingene/img-18.jpg',
-                isThumb: false,   
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-19.jpg',
                 isThumb: false,     
                 note: '',
               },
               {
-                src: '../../static/images/te-koop/wingene/img-20.jpg',
+                src: '../../static/images/te-koop/wingene/img-19.jpg',
                 isThumb: false,   
-                note: '',
+                note: 'Achtergevel in opbouw',
               },
               {
                 src: '../../static/images/te-koop/wingene/img-21.jpg',
                 isThumb: false, 
-                note: '',
-              },
-              {
-                src: '../../static/images/te-koop/wingene/img-22.jpg',
-                isThumb: false,  
                 note: '',
               },
             ]
@@ -298,7 +298,7 @@
         this.placeContactPointer();
       }
 
-      if (this.detailBreadcrumb !== null && this.detailTitle !== null && this.detailIntro !== null && this.detailContent !== null) {
+      if (this.detailBreadcrumb !== null && this.detailTitle !== null && this.detailIntro !== null && this.detailContent !== null && this.detailImages !== null) {
         this.generateDetailTeKoop();
       }
 
@@ -314,8 +314,8 @@
       this.detailIntro = document.querySelector('[data-label="detail-intro"]');
       this.detailContent = document.querySelector('[data-label="detail-content"]');
       this.detailPrice = document.querySelector('[data-label="detail-price"]');
+      this.detailImages = document.querySelector('[data-label="detail-images"]');
       this.containerCardsPremises = document.querySelector('[data-label="te-koop-items"');
-
 
       const bodyElement = document.body;
       const btnToggleElement = document.querySelector('.btn-hamburger');
@@ -419,7 +419,7 @@
           }
 
           tempStr += `
-            <a class="flex-grid-item card premise" href="" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
+            <a class="flex-grid-item card premise" href="./${item.slug}/" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
               <div class="card-head">
                   <img src="${this.tumbPath.replace('../', '../static/')}" alt="">
                   <div class="meta">
@@ -452,7 +452,7 @@
         this.detailContent.innerHTML = `
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
             <div class="detail-head-pic"> 
-                ${this.getHeadImage(currentDetailItem.properties.media)}
+              <img src="${currentDetailItem.headImage}" alt="">
             </div>
             <div class="detail-description">
                 ${currentDetailItem.content}
@@ -476,6 +476,7 @@
             </div>
           </div>
         `
+        this.detailImages.innerHTML = this.getAllDetailImages(currentDetailItem.properties[0].media);
       }
       
     },
@@ -484,7 +485,7 @@
 
       if (!props.isSold) {
         props.forEach(prop => {
-          tempStr += `€ ${prop.price}`
+          tempStr = `${this.priceFormat('€ ', prop.price)}`
         })
       }
       else {
@@ -492,13 +493,6 @@
       }
 
       return tempStr;
-    },
-    getHeadImage(media) {
-      const headImage = media.filter(mediaItem => mediaItem.isHead);
-
-      if (headImage !== undefined) {
-        return `<img src="${headImage[0].src}" alt="">`
-      }
     },
     getPropsBuilding(buildingProps) {
       let tempStr = '';
@@ -511,6 +505,45 @@
           </tr>
         `
       })
+
+      return tempStr;
+    },
+    getAllDetailImages(media) {
+      let tempStr = '', note = '';
+      let mediaFiltered = media.filter(image => !image.isThumb);
+
+      for (let i = 0; i < mediaFiltered.length; i++) {
+        if (i === 0 || i === Math.round(mediaFiltered.length / 2)) {
+          if (i > 0 ) {
+            tempStr += '</div>'
+          }
+
+          tempStr += '<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">';
+        }
+
+        console.log(mediaFiltered[i]);
+
+        if (mediaFiltered[i].note !== '') {
+          note = `
+          <div class="note">
+            <p>${mediaFiltered[i].note}</p>
+          </div>
+          `
+        }
+
+        tempStr += `
+          <a class="detail-card" href="">
+            <div class="detail-image">
+                <img src="${mediaFiltered[i].src}" alt="">
+                ${note}
+            </div>
+          </a>
+        `;
+
+        note = '';
+      }
+
+      tempStr += '</div>'
 
       return tempStr;
     },

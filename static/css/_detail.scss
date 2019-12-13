@@ -58,13 +58,6 @@
     position: absolute;
     top: 5px;
     left: -25px;
-
-    div {
-      width: 50px;
-      height: 10px;
-      margin-bottom: 10px;
-      background: #fff;
-    }
   }
 }
 
@@ -121,6 +114,39 @@
           padding: 0.375rem;
         }
       }
+    }
+  }
+}
+
+.detail-card {
+  display: block;
+  margin-top: 20px;
+
+  div.detail-image {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -15.5px;
+      top: 10px;
+      display: block;
+      content: " ";
+      background-image: url(../images/ornament_rood.svg);
+      width: 31px;
+      height: 55px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .note {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+      background: var(--accent-main);
+      padding: 10px 14px;
     }
   }
 }
