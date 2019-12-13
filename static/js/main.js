@@ -1,6 +1,7 @@
 (() => {
   const database = {
-    premises: [{
+    premises: [
+      {
         title: 'nieuwbouwwoning wingene',
         intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
         slug: 'nieuwbouwwoning-met-3-slaapkamers-in-wildenburg-wingene',
@@ -190,21 +191,16 @@
         ],
       },
       {
-        title: 'nieuwbouwwoning wingene',
-        intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
+        title: 'alleenstaande pastoriewoning in wingene',
+        intro: 'ruime alleenstaande woning',
         properties: [
           {
             price: 292500,
-            sold: false,
+            sold: true,
             media: [
               {
-                src: '../images/te-koop/oostveld/oostveld-01.jpg',
+                src: '../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
                 isThumb: true,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/oostveld/oostveld-02.jpg',
-                isThumb: false,
                 note: '',
               },
             ],
@@ -221,8 +217,8 @@
             sold: false,
             media: [
               {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
+                src: '../images/te-koop/oostveld/oostveld-01.jpg',
+                isThumb: true,
                 note: '',
               },
             ],
@@ -235,7 +231,7 @@
             sold: true,
             media: [
               {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
+                src: '../images/te-koop/oostveld/oostveld-02.jpg',
                 isThumb: false,
                 note: '',
               },
@@ -246,36 +242,64 @@
         city: 'oostveld',
       },
       {
-        title: 'nieuwbouwwoning wingene',
-        intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
+        title: 'Nieuwbouwwoningen Doomkerke',
+        intro: 'Drie geschakelde nieuwbouwwoningen',
         properties: [
           {
             price: 292500,
-            sold: false,
+            sold: true,
             media: [
               {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624 copy.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624-cover.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/wingene/IMG_9624-cover2.jpeg',
+                src: '../images/te-koop/doomkerke/doomkerke-01.jpg',
                 isThumb: true,
                 note: '',
               },
               {
-                src: '../images/te-koop/wingene/IMG_9624.JPG',
+                src: '../images/te-koop/doomkerke/doomkerke-02.jpg',
                 isThumb: false,
+                note: '',
+              },
+              {
+                src: '../images/te-koop/doomkerke/doomkerke-03.jpg',
+                isThumb: false,
+                note: '',
+              },
+              {
+                src: '../images/te-koop/doomkerke/doomkerke-04.jpg',
+                isThumb: true,
+                note: '',
+              },
+            ],
+          type: 'huis'
+        }],
+        city: 'wingene',
+      },
+      {
+        title: 'Appartement 101',
+        intro: 'Appartement met twee slaapkamers en terras',
+        properties: [
+          {
+            price: 292500,
+            sold: true,
+            media: [
+              {
+                src: '../images/te-koop/doomkerke/doomkerke-01.jpg',
+                isThumb: true,
+                note: '',
+              },
+              {
+                src: '../images/te-koop/doomkerke/doomkerke-02.jpg',
+                isThumb: false,
+                note: '',
+              },
+              {
+                src: '../images/te-koop/doomkerke/doomkerke-03.jpg',
+                isThumb: false,
+                note: '',
+              },
+              {
+                src: '../images/te-koop/doomkerke/doomkerke-04.jpg',
+                isThumb: true,
                 note: '',
               },
             ],
@@ -360,7 +384,6 @@
         });
       });
     },
-
     generateItemsTekoop() {
       let tempStr = '', meta, tumbPath = '';
       if (this.containerCardsPremises !== null) {
@@ -379,7 +402,7 @@
           }
 
           tempStr += `
-            <a class="flex-grid-item card premise" href="" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
+            <a class="flex-grid-item card premise" href="${item.slug !== undefined ? item.slug : ''}" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
               <div class="card-head">
                   <img src="${this.tumbPath.replace('../', '../static/')}" alt="">
                   <div class="meta">
@@ -387,8 +410,8 @@
                   </div>
               </div>
               <div class="card-body p-16">
-                  <h3>Nieuwbouwwoning wingene</h3>
-                  <p>Nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.</p>
+                  <h3>${item.title}</h3>
+                  <p>${item.intro}</p>
               </div>
             </a>
           `
