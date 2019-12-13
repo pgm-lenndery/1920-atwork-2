@@ -9,8 +9,8 @@
   margin: 0px;
   padding: 0px;
   font-family: 'NeueHaasGroteskDisp Pro';
-  font-size: 1rem;
   line-height: 1.5;
+  word-spacing: 3px;
 }
 
 html {
@@ -65,6 +65,7 @@ h2 {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent-main);
+  line-height: 1.8;
 }
 
 h4 {
@@ -288,6 +289,10 @@ header {
 }
 
 @media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+
   header {
     // height
     transform: scaleY(1);
@@ -313,7 +318,6 @@ header {
       }
 
       nav {
-        // transform-origin: top;
         margin-top: 10px;
         border-top: 1px solid hsla(0,0%,100%,.4);
 

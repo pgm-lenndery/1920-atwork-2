@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Matthias Talloen - bouwpromoter en algemene aannemer</title>
+    <script src="https://kit.fontawesome.com/9a8699aa96.js" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="../../static/css/main.css">
+    
 </head>
 <body>
     <div class="top-bar">
@@ -35,10 +39,15 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <div class="col-6 btn-hamburger-container">
+                        <div class="btn-hamburger">
+                            <i class="fas fa-bars "></i>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 nav-container">
                         <nav>
                             <ul>
-                                <li><a href="../../te-koop/">Te koop</a></li>
+                                <li><a href="../">Te koop</a></li>
                                 <li><a href="#">Te huur</a></li>
                                 <li><a href="#">Realisaties</a></li>
                                 <li><a href="#">Het bedrijf</a></li>
@@ -50,15 +59,23 @@
                         <hr>
                     </div>
                 </div>
-                <div class="row ">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="row header-sub">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                         <div data-section="hero">
                             <div class="breadcrumb">
-                                <p><a href="../../">Home</a><span class="first"></span><a href="../">Te koop</a><span>Nieuwbouwwoning Wingene</span></p>
+                                <p><a href="../../">Home</a><span class="first"></span><a href="../">Te koop</a><span data-label="detail-breadcrumb"></span></p>
                             </div>
-                            <h1>Nieuwbouwwoning Wingene</h1>
-                            <h4>Nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.</h4>
+                            <h1 data-label="detail-title"></h1>
+                            <h4 data-label="detail-intro"></h4>
                         </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                       <div class="price">
+                            <div class="price-info">
+                                <p>Vraagprijs</p>
+                                <p data-label="detail-price">Vraagprijs</p>
+                            </div>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -68,8 +85,13 @@
         <div class="detail-premise">
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row detail-content" data-label="detail-content">
                 
+            <div class="row images">
+
+            </div>
+            <div class="row related">
+
             </div>
         </div>
     </main>
@@ -109,5 +131,7 @@
             </div>
         </div>
     </footer>
+    <script src="../../static/js/map-config.js"></script>
+    <script src="../../static/js/main.js"></script>
 </body>
 </html>
