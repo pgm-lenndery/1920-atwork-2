@@ -148,7 +148,7 @@ small, .small {
 .align-items-end {align-items: flex-end}
 
 /* MARGIN */
-$sizes: 0, 8, 10, 16, 20, 24, 30, 40;
+$sizes: 0, 8, 10, 16, 24, 30, 40, 50, 70, 90, 100;
 @each $size in $sizes {
   .m-#{$size} {
     margin: #{$size}px;
@@ -164,7 +164,7 @@ $sizes: 0, 8, 10, 16, 20, 24, 30, 40;
   }
   .mb-#{$size} {
     margin-bottom: #{$size}px;
-  }
+  } 
   .mx-#{$size} {
     margin-left: #{$size}px;
     margin-right: #{$size}px;
