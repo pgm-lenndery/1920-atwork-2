@@ -189,10 +189,28 @@
             ]
           }
         ],
+        city: 'wingene',
       },
       {
         title: 'alleenstaande pastoriewoning in wingene',
         intro: 'ruime alleenstaande woning',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/oostveld/oostveld-01.jpg',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          street: 'Tinhoutstraat',
+          number: 120,
+          zipCode: 8730,
+          city: 'Beernem',
+          coordinates: {
+            lat: 51.161008,
+            lng: 3.390056,
+          }
+        },
         properties: [
           {
             price: 292500,
@@ -208,104 +226,67 @@
         ],
       },
       {
-        title: 'appartementen in oostveld',
-        intro: 'vijf nieuwbouwappartementen in het rustige oostveld',
+        title: 'Alleenstaande pastoriewoning in Wingene',
+        intro: 'Ruime alleenstande woning',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/wingene2/IMG_9624-cover-600x445.jpg',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          
+        },
         properties: [{
-            title: 'appartement 101',
-            bedrooms: '2',
-            price: 220000,
-            sold: false,
-            media: [
-              {
-                src: '../images/te-koop/oostveld/oostveld-01.jpg',
-                isThumb: true,
-                note: '',
-              },
-            ],
-            type: 'appartement'
-          },
-          {
-            title: 'appartement 201',
-            bedrooms: '1',
             price: 220000,
             sold: true,
             media: [
               {
-                src: '../images/te-koop/oostveld/oostveld-02.jpg',
-                isThumb: false,
+                src: '../images/te-koop/wingene2/IMG_9624-cover-600x445.jpg',
+                isThumb: true,
                 note: '',
               },
             ],
             type: 'appartement'
           },
         ],
-        city: 'oostveld',
+        city: 'wingene',
       },
       {
         title: 'Nieuwbouwwoningen Doomkerke',
         intro: 'Drie geschakelde nieuwbouwwoningen',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/doomkerke/doomkerkerpano-600x445.JPG',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          street: 'Brugsesteenweg',
+          number: 79,
+          zipCode: 8755,
+          city: 'Ruislede',
+          coordinates: {
+            lat: 51.076999,
+            lng: 3.353159,
+          }
+        },
         properties: [
           {
             price: 292500,
             sold: true,
             media: [
               {
-                src: '../images/te-koop/doomkerke/doomkerke-01.jpg',
-                isThumb: true,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-02.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-03.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-04.jpg',
+                src: '../images/te-koop/doomkerke/doomkerkerpano-600x445.JPG',
                 isThumb: true,
                 note: '',
               },
             ],
           type: 'huis'
         }],
-        city: 'wingene',
-      },
-      {
-        title: 'Appartement 101',
-        intro: 'Appartement met twee slaapkamers en terras',
-        properties: [
-          {
-            price: 292500,
-            sold: true,
-            media: [
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-01.jpg',
-                isThumb: true,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-02.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-03.jpg',
-                isThumb: false,
-                note: '',
-              },
-              {
-                src: '../images/te-koop/doomkerke/doomkerke-04.jpg',
-                isThumb: true,
-                note: '',
-              },
-            ],
-          type: 'huis'
-        }],
-        city: 'wingene',
+        city: 'ruislede',
       },
     ]
   }
