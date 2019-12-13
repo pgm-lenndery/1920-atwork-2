@@ -146,10 +146,10 @@ cursor: pointer;
 .align-items-center {align-items: center;}
 
 /* MARGIN */
-$sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
+$sizes: 0, 8, 10, 16, 20, 24, 30, 40;
 @each $size in $sizes {
   .m-#{$size} {
-    margin: $size ;
+    margin: #{$size}px;
   }
   .ml-#{$size} {
     margin-left: #{$size}px;
@@ -177,7 +177,7 @@ $sizes: 0, 10, 20, 30, 40, 50, 70, 90, 100;
 /* PADDING */
 @each $size in $sizes {
     .p-#{$size} {
-      padding: $size ;
+      padding: #{$size}px;
     }
     .pl-#{$size} {
       padding-left: #{$size}px;
