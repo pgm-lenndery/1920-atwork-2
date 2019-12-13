@@ -9,7 +9,7 @@
     .flex-grid .flex-grid-item.card {
       box-shadow: 0 0 20px rgba(0,0,0,.17);
       position: relative;
-      transition: all .2s ease-in-out;
+      transition: var(--transition);
 
         &::before {
             position: absolute;
@@ -17,7 +17,7 @@
             top: 10px;
             display: block;
             content: " ";
-            background-image: url(../../images/ornament_rood.svg);
+            background-image: url(../images/ornament_rood.svg);
             width: 31px;
             height: 55px;   
             z-index: 1;
@@ -63,5 +63,102 @@
 
 /* FILTER */
 [data-section='card-filter'] {
+    background-color: var(--accent-main-light);
+
+    .filter {
+        .filter-label {
+            color: white;
+        }
+
+        button.btn[data-label="filterSearch"] {
+            background-color: var(--accent-main-light);
+            color: white;
+
+            &::after {
+                --color: white;
+            }
+        }
+    }
+}
+
+.selectric {
+    position: relative;
+    background-color: var(-accent-1);
+
+    .selectric-label {
+        background-color: white;
+        border: 1px solid white;
+        width: 100%;
+        padding: 7px 30px 7px 10px;
+        text-align: left;
+        color: var(--accent-main-light);
+        cursor: pointer;
+
+        &::after {
+            --size: 5px;
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: calc(50% - (var(--size)/2));
+            border-bottom: var(--size) solid var(--accent-main-light);
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            transform: rotate(180deg);
+            transition: var(--transition);
+            transition-duration: .3s;
+        }
+
+        &.collapse-show::after {
+            transform: rotate(360deg);
+        }
+    }
+
+    .selectric-list {
+        position: absolute;
+        top: calc(0px + 100%);
+        z-index: 2;
+        background: white;
+        width: 100%;
+
+        input[type="radio"] {
+            display: none;
+
+            &+ label {
+                display: block;
+                width: 100%;
+                padding: 7px 30px 7px 10px;
+                cursor: pointer;
+                color: var(--accent-3);
+
+                &.current, &:hover {
+                    background-color: var(--accent-2);
+                }
+            }
+
+            &:checked + label {
+                background-color: var(--accent-2);
+                color: black;
+            }
+        }
+    }
+}
+
+.ornament {
+    position: relative;
     
+    &::before {
+        position: absolute;
+        left: calc((31px/2)*-1);
+        top: 10px;
+        display: block;
+        content: " ";
+        background-image: url(../images/ornament_rood.svg);
+        width: 31px;
+        height: 55px;   
+        z-index: 1;
+    }
+
+    &.white::before {
+        background-image: url(../images/ornament_wit.svg);
+    }
 }
