@@ -309,6 +309,8 @@
       this.detailIntro = document.querySelector('[data-label="detail-intro"]');
       this.detailContent = document.querySelector('[data-label="detail-content"]');
       this.detailPrice = document.querySelector('[data-label="detail-price"]');
+      this.containerCardsPremises = document.querySelector('[data-label="te-koop-items"');
+
 
       const bodyElement = document.body;
       const btnToggleElement = document.querySelector('.btn-hamburger');
@@ -357,7 +359,6 @@
           });
         });
       });
-      this.containerCardsPremises = document.querySelector('[data-label="te-koop-items"');
     },
 
     generateItemsTekoop() {
