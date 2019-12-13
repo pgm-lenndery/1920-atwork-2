@@ -1198,6 +1198,7 @@ Grid system with grid
   --accent-main-dark: #e54654;
   --accent-1: #f8f8f8;
   --accent-2: #e9e9e9;
+  --accent-3: #666;
   --transition: all .2s ease-in-out;
 }
 
@@ -1228,6 +1229,10 @@ a {
   color: unset;
 }
 
+.d-none {
+  display: none !important;
+}
+
 /* COLORS */
 .bg-color-main {
   background-color: var(--accent-main);
@@ -1237,8 +1242,16 @@ a {
   background-color: var(--accent-main-dark);
 }
 
+.bg-color-2 {
+  background-color: var(--accent-2);
+}
+
 .text-color-main {
   color: var(--accent-main);
+}
+
+.text-white {
+  color: white;
 }
 
 ul.menu-list {
@@ -1265,6 +1278,11 @@ h1 {
 h2 {
   font-size: 1.8rem;
   font-weight: 700;
+  color: var(--accent-main);
+}
+
+h3 {
+  color: var(--accent-main);
 }
 
 h4 {
@@ -1277,6 +1295,10 @@ small, .small {
 
 small *, .small * {
   font-size: small;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* BUTTONS */
@@ -1467,6 +1489,36 @@ small *, .small * {
   margin-bottom: 16px;
 }
 
+.m-20 {
+  margin: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mx-20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .m-24 {
   margin: 24px;
 }
@@ -1555,126 +1607,6 @@ small *, .small * {
 .my-40 {
   margin-top: 40px;
   margin-bottom: 40px;
-}
-
-.m-50 {
-  margin: 50px;
-}
-
-.ml-50 {
-  margin-left: 50px;
-}
-
-.mr-50 {
-  margin-right: 50px;
-}
-
-.mt-50 {
-  margin-top: 50px;
-}
-
-.mb-50 {
-  margin-bottom: 50px;
-}
-
-.mx-50 {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.my-50 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.m-70 {
-  margin: 70px;
-}
-
-.ml-70 {
-  margin-left: 70px;
-}
-
-.mr-70 {
-  margin-right: 70px;
-}
-
-.mt-70 {
-  margin-top: 70px;
-}
-
-.mb-70 {
-  margin-bottom: 70px;
-}
-
-.mx-70 {
-  margin-left: 70px;
-  margin-right: 70px;
-}
-
-.my-70 {
-  margin-top: 70px;
-  margin-bottom: 70px;
-}
-
-.m-90 {
-  margin: 90px;
-}
-
-.ml-90 {
-  margin-left: 90px;
-}
-
-.mr-90 {
-  margin-right: 90px;
-}
-
-.mt-90 {
-  margin-top: 90px;
-}
-
-.mb-90 {
-  margin-bottom: 90px;
-}
-
-.mx-90 {
-  margin-left: 90px;
-  margin-right: 90px;
-}
-
-.my-90 {
-  margin-top: 90px;
-  margin-bottom: 90px;
-}
-
-.m-100 {
-  margin: 100px;
-}
-
-.ml-100 {
-  margin-left: 100px;
-}
-
-.mr-100 {
-  margin-right: 100px;
-}
-
-.mt-100 {
-  margin-top: 100px;
-}
-
-.mb-100 {
-  margin-bottom: 100px;
-}
-
-.mx-100 {
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-.my-100 {
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 /* PADDING */
@@ -1798,6 +1730,36 @@ small *, .small * {
   padding-bottom: 16px;
 }
 
+.p-20 {
+  padding: 20px;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+
+.pr-20 {
+  padding-right: 20px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .p-24 {
   padding: 24px;
 }
@@ -1888,127 +1850,22 @@ small *, .small * {
   padding-bottom: 40px;
 }
 
-.p-50 {
-  padding: 50px;
-}
-
-.pl-50 {
-  padding-left: 50px;
-}
-
-.pr-50 {
-  padding-right: 50px;
-}
-
-.pt-50 {
-  padding-top: 50px;
-}
-
-.pb-50 {
-  padding-bottom: 50px;
-}
-
-.px-50 {
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
-.py-50 {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.p-70 {
-  padding: 70px;
-}
-
-.pl-70 {
-  padding-left: 70px;
-}
-
-.pr-70 {
-  padding-right: 70px;
-}
-
-.pt-70 {
-  padding-top: 70px;
-}
-
-.pb-70 {
-  padding-bottom: 70px;
-}
-
-.px-70 {
-  padding-left: 70px;
-  padding-right: 70px;
-}
-
-.py-70 {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-
-.p-90 {
-  padding: 90px;
-}
-
-.pl-90 {
-  padding-left: 90px;
-}
-
-.pr-90 {
-  padding-right: 90px;
-}
-
-.pt-90 {
-  padding-top: 90px;
-}
-
-.pb-90 {
-  padding-bottom: 90px;
-}
-
-.px-90 {
-  padding-left: 90px;
-  padding-right: 90px;
-}
-
-.py-90 {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-.p-100 {
-  padding: 100px;
-}
-
-.pl-100 {
-  padding-left: 100px;
-}
-
-.pr-100 {
-  padding-right: 100px;
-}
-
-.pt-100 {
-  padding-top: 100px;
-}
-
-.pb-100 {
-  padding-bottom: 100px;
-}
-
-.px-100 {
-  padding-left: 100px;
-  padding-right: 100px;
-}
-
-.py-100 {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
 /* SECTIONS */
+[data-section='hero'] {
+  text-transform: uppercase;
+}
+
+[data-section='hero'] h3 {
+  font-size: 1.284rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+[data-section='hero'] h3 span.meta {
+  font-size: inherit;
+  font-weight: normal;
+}
+
 [data-section='hero'] h4 {
   font-size: 1.285rem;
   font-weight: 400;
@@ -4283,9 +4140,7 @@ header .main-nav hr {
 }
 
 .selectric .selectric-label {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  background-color: white;
   border: 1px solid white;
   width: 100%;
   padding: 7px 30px 7px 10px;
@@ -4324,17 +4179,45 @@ header .main-nav hr {
   width: 100%;
 }
 
-.selectric .selectric-list ul {
-  list-style: none;
+.selectric .selectric-list input[type="radio"] {
+  display: none;
 }
 
-.selectric .selectric-list ul li {
+.selectric .selectric-list input[type="radio"] + label {
+  display: block;
+  width: 100%;
   padding: 7px 30px 7px 10px;
   cursor: pointer;
+  color: var(--accent-3);
 }
 
-.selectric .selectric-list ul li.current, .selectric .selectric-list ul li:hover {
+.selectric .selectric-list input[type="radio"] + label.current, .selectric .selectric-list input[type="radio"] + label:hover {
   background-color: var(--accent-2);
+}
+
+.selectric .selectric-list input[type="radio"]:checked + label {
+  background-color: var(--accent-2);
+  color: black;
+}
+
+.ornament {
+  position: relative;
+}
+
+.ornament::before {
+  position: absolute;
+  left: calc((31px/2)*-1);
+  top: 10px;
+  display: block;
+  content: " ";
+  background-image: url(../images/ornament_rood.svg);
+  width: 31px;
+  height: 55px;
+  z-index: 1;
+}
+
+.ornament.white::before {
+  background-image: url(../images/ornament_wit.svg);
 }
 
 @font-face {

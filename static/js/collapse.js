@@ -3,8 +3,8 @@
 (() => {
     const app = {
         initialize() {
-            console.log('\n' + `%c[service] collapse.js ${arguments.callee.name}() running! \n` + ' ', 'color: #00d400; font-weight: bold');
-            console.log(`%c[service] ${arguments.callee.name}()`, 'font-weight: bold');
+            console.log('\n' + `%ccollapse.js ${arguments.callee.name}() running! \n` + ' ', 'color: #00d400; font-weight: bold');
+            console.log(`%c${arguments.callee.name}()`, 'font-weight: bold');
             this.cached();
             this.collapseTrigger.length !== 0 ? console.log(`\tcollapse triggers available`) : console.log(`\tno collapse triggers`);
 
@@ -31,10 +31,12 @@
                     item.classList.add('collapse-hidden');
                 }
             })
+
+            this.collapseItemHide();
         },
     
         cached() {
-            console.log(`%c[service] ${arguments.callee.name}()`, 'font-weight: bold');
+            console.log(`%c${arguments.callee.name}()`, 'font-weight: bold');
     
             // Put cache elements here
             this.collapseTrigger = document.querySelectorAll('[data-collapse-trigger]');
@@ -43,7 +45,7 @@
         },
     
         collapseDo(target) {
-            console.log(`%c[service] ${arguments.callee.name}()`, 'font-weight: bold');
+            console.log(`%c${arguments.callee.name}()`, 'font-weight: bold');
     
             this.targetName = target;
             target = document.querySelector(`[data-collapse-target='${target}']`);
@@ -89,8 +91,26 @@
         itemShow(input) {
             input.classList.add('collapse-show');
             input.classList.remove('collapse-hidden');
-        }
-    }
+        },
 
+        collapseItemHide() {
+            document.body.addEventListener("click", function(event) {
+                if (event.target.closest(".collapse")) {
+                    return
+                } else {
+                    document.querySelectorAll('[data-collapse-trigger]').forEach((item) => {
+                        item.classList.remove('collapse-show');
+                        item.classList.add('collapse-hidden');
+                    })
+    
+                    document.querySelectorAll('[data-collapse-target]').forEach((item) => {
+                        item.classList.remove('collapse-show');
+                        item.classList.add('collapse-hidden');
+                    })
+                }                
+            });
+        }        
+    }
+    
     app.initialize();
 })()

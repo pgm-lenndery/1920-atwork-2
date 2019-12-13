@@ -86,7 +86,7 @@
     background-color: var(-accent-1);
 
     .selectric-label {
-        appearance: none;
+        background-color: white;
         border: 1px solid white;
         width: 100%;
         padding: 7px 30px 7px 10px;
@@ -120,17 +120,45 @@
         background: white;
         width: 100%;
 
-        ul {
-            list-style: none;
+        input[type="radio"] {
+            display: none;
 
-            li {
+            &+ label {
+                display: block;
+                width: 100%;
                 padding: 7px 30px 7px 10px;
                 cursor: pointer;
+                color: var(--accent-3);
 
                 &.current, &:hover {
                     background-color: var(--accent-2);
                 }
             }
+
+            &:checked + label {
+                background-color: var(--accent-2);
+                color: black;
+            }
         }
+    }
+}
+
+.ornament {
+    position: relative;
+    
+    &::before {
+        position: absolute;
+        left: calc((31px/2)*-1);
+        top: 10px;
+        display: block;
+        content: " ";
+        background-image: url(../images/ornament_rood.svg);
+        width: 31px;
+        height: 55px;   
+        z-index: 1;
+    }
+
+    &.white::before {
+        background-image: url(../images/ornament_wit.svg);
     }
 }
