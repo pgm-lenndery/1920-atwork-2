@@ -329,8 +329,23 @@ header {
   }
 }
 
+.page-info {
+  h1 {
+    color: #fff;
+
+  }
+
+  h4 {
+    font-size: 1.285rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
 .breadcrumb {
   margin-bottom: 20px;
+  text-transform: none;
   p {
     font-size: 1rem;
     a {

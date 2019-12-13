@@ -2,7 +2,7 @@
   const database = {
     premises: [
       {
-        title: 'nieuwbouwwoning wingene',
+        title: 'Nieuwbouwwoning wingene',
         intro: 'nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.',
         slug: 'nieuwbouwwoning-met-3-slaapkamers-in-wildenburg-wingene',
         content: `

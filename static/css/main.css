@@ -2204,8 +2204,20 @@ header .main-nav hr {
   padding-bottom: 10px;
 }
 
+.page-info h1 {
+  color: #fff;
+}
+
+.page-info h4 {
+  font-size: 1.285rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+}
+
 .breadcrumb {
   margin-bottom: 20px;
+  text-transform: none;
 }
 
 .breadcrumb p {
@@ -4647,27 +4659,12 @@ h3.detail-title {
   color: var(--accent-main);
 }
 
-.header-sub {
-  height: 120px;
-}
-
-.header-sub .price {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.header-sub .price div {
-  position: absolute;
-  bottom: 15px;
-}
-
-.header-sub .price div p {
+.price p {
   color: #fff;
   font-size: 1.125rem;
 }
 
-.header-sub .price div p:last-child {
+.price p:last-child {
   font-size: 2rem;
   font-weight: 700;
 }
@@ -4818,6 +4815,7 @@ h3.detail-title {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.17);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.17);
   position: relative;
+  margin-bottom: 20px;
 }
 
 .related-card .related-image {
@@ -4871,6 +4869,38 @@ h3.detail-title {
 .related-card .related-body p {
   text-transform: none;
   line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .price p {
+    color: #fff;
+    font-size: 1.125rem;
+  }
+  .price p.price-title {
+    display: none;
+  }
+  .price p:last-child {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .detail-properties table {
+    text-align: left;
+    border-collapse: collapse;
+    background: #fff;
+    width: 100%;
+  }
+  .detail-properties table tbody tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .detail-properties table tbody tr th {
+    border: none;
+  }
 }
 
 * {
