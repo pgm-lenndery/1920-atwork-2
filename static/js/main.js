@@ -199,11 +199,6 @@
             sold: false,
             media: [
               {
-                src: '../images/te-koop/wingene/IMG_1252.JPG',
-              },
-            ],
-            media: [
-              {
                 src: '../images/te-koop/oostveld/oostveld-01.jpg',
                 isThumb: true,
                 note: '',
