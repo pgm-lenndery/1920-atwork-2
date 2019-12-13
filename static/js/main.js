@@ -193,7 +193,34 @@
       },
       {
         title: 'alleenstaande pastoriewoning in wingene',
-        intro: 'ruime alleenstaande woning',
+        intro: 'Ruime alleenstaande woning',
+        slug: '',
+        content: `
+        `,
+        headImage: '../../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          
+        },
+        properties: [
+          {
+            price: 292500,
+            sold: true,
+            media: [
+              {
+                src: '../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
+                isThumb: true,
+                note: '',
+              },
+            ],
+          }
+        ],
+      },
+      {
+        title: 'Appartementen in oostveld',
+        intro: 'Vijf nieuwbouwappartementen in het rustige oostveld',
         slug: '',
         content: `
         `,
@@ -211,43 +238,26 @@
             lng: 3.390056,
           }
         },
-        properties: [
-          {
-            price: 292500,
-            sold: true,
-            media: [
-              {
-                src: '../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
-                isThumb: true,
-                note: '',
-              },
-            ],
-          }
-        ],
-      },
-      {
-        title: 'Alleenstaande pastoriewoning in Wingene',
-        intro: 'Ruime alleenstande woning',
-        slug: '',
-        content: `
-        `,
-        headImage: '../../images/te-koop/wingene2/IMG_9624-cover-600x445.jpg',
-        propertiesBuilding: [
-          
-        ],
-        address: {
-          
-        },
         properties: [{
+            title: 'appartement 101',
+            bedrooms: '2',
+            price: 220000,
+            sold: false,
+            media: [{
+              src: '../images/te-koop/oostveld/oostveld-01.jpg',
+              isThumb: true,
+            }, ],
+            type: 'appartement'
+          },
+          {
+            title: 'appartement 201',
+            bedrooms: '1',
             price: 220000,
             sold: true,
-            media: [
-              {
-                src: '../images/te-koop/wingene2/IMG_9624-cover-600x445.jpg',
-                isThumb: true,
-                note: '',
-              },
-            ],
+            media: [{
+              src: '../images/te-koop/oostveld-02.jpg',
+              isThumb: false,
+            }, ],
             type: 'appartement'
           },
         ],
@@ -295,7 +305,7 @@
     init() {
       this.cacheElements();
       if (this.mapContactElement !== null) {
-        this.placeContactPointer();
+        this.placePointer({lat: 51.128666, lng: 3.266715});
       }
 
       if (this.detailBreadcrumb !== null && this.detailTitle !== null && this.detailIntro !== null && this.detailContent !== null && this.detailImages !== null) {
@@ -316,6 +326,7 @@
       this.detailPrice = document.querySelector('[data-label="detail-price"]');
       this.detailImages = document.querySelector('[data-label="detail-images"]');
       this.containerCardsPremises = document.querySelector('[data-label="te-koop-items"');
+      this.relatedItems = document.querySelector('.related');
 
       const bodyElement = document.body;
       const btnToggleElement = document.querySelector('.btn-hamburger');
@@ -329,16 +340,22 @@
         }
       });
     },
-    placeContactPointer() {
+    placePointer(coordinates, page = 'other') {
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         zoom: 12,
-        center: [3.266715, 51.128666], // , 
+        center: [coordinates.lng, coordinates.lat], // , 
       });
 
+      let pre = '../'
+
+      if (page === 'detail') {
+        pre = '../../'
+      }
+
       map.on('load', function() {
-        map.loadImage('../static/images/marker.png', function(error, image) {
+        map.loadImage(pre + 'static/images/marker.png', function(error, image) {
         if (error) throw error;
         map.addImage('marker', image);
           map.addLayer({
@@ -352,7 +369,7 @@
                   "type": "Feature",
                   "geometry": {
                     "type": "Point",
-                    "coordinates": [3.266715, 51.128666]
+                    "coordinates": [coordinates.lng, coordinates.lat]
                   }
                 }]
               }
@@ -459,7 +476,7 @@
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="map"></div>
+            <div id="map" class="map"></div>
             <div class="address-info">
                 <h4>Locatie</h4>
                 <address> 
@@ -477,6 +494,8 @@
           </div>
         `
         this.detailImages.innerHTML = this.getAllDetailImages(currentDetailItem.properties[0].media);
+        this.relatedItems.innerHTML = this.getRelatedItems(currentDetailItem.slug);
+        this.placePointer(currentDetailItem.address.coordinates, 'detail')
       }
       
     },
@@ -518,7 +537,7 @@
             tempStr += '</div>'
           }
 
-          tempStr += '<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">';
+          tempStr += '<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">';
         }
 
         console.log(mediaFiltered[i]);
@@ -546,6 +565,48 @@
       tempStr += '</div>'
 
       return tempStr;
+    },
+    getRelatedItems(current) {
+      const filteredPremises = database.premises.filter(building => building.slug !== current);
+
+      let tempStr = '', meta, tumbPath = '';
+          
+      filteredPremises.forEach(item => {
+
+        console.log(item);
+
+        this.generateThumbPath(item.properties[0].media);
+
+        if (item.properties.length == 1) {
+          // 1 LOT
+          item.properties[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ', item.properties[0].price);
+        } else {
+          // MEERDERE LOTEN
+          this.meta = `${item.properties.length} loten`;
+        }
+
+        tempStr += `
+          <a class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 related-card-box" href="./${item.slug}/">
+            <div class="related-card">
+              <div class="related-image">
+                <img src="${this.tumbPath.replace('../', '../../static/')}" alt="">
+                <div class="meta">
+                  ${this.meta}
+                </div>
+              </div>
+              <div class="related-body p-16">
+                <h3>${item.title}</h3>
+                <p>${item.intro}</p>
+              </div>
+            </div>
+          </a>
+        `
+      })
+
+      return tempStr;
+    },
+    setDetailPointerMap() {
+      
     },
     generateThumbPath(input) {
       input.forEach(r => {
