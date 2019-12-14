@@ -312,6 +312,10 @@
         this.generateDetailTeKoop();
       }
 
+      if (this.mapTeKoop !== null) {
+        this.placePointersTeKoop();
+      }
+
       this.generateItemsTekoop();
       this.filterPremises()
     },
@@ -327,6 +331,9 @@
       this.detailImages = document.querySelector('[data-label="detail-images"]');
       this.containerCardsPremises = document.querySelector('[data-label="te-koop-items"');
       this.relatedItems = document.querySelector('.related');
+      this.mapTeKoop = document.querySelector('.map-te-koop');
+      this.rasterBtn = document.querySelector('.raster-btn');
+      this.mapBtn = document.querySelector('.map-btn');
 
       const bodyElement = document.body;
       const btnToggleElement = document.querySelector('.btn-hamburger');
@@ -339,6 +346,30 @@
           bodyElement.classList.add('nav-isopen');
         }
       });
+
+      if (this.rasterBtn !== null && this.mapBtn !== null) {
+        this.rasterBtn.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          this.rasterBtn.classList.add('selected');
+          this.mapBtn.classList.remove('selected');
+          this.cardsTeKoop.classList.add('active-te-koop');
+          this.cardsTeKoop.classList.remove('hidden-te-koop');
+          this.mapTeKoop.classList.add('hidden-te-koop');
+          this.mapTeKoop.classList.remove('active-te-koop');
+        })
+  
+        this.mapBtn.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          this.rasterBtn.classList.remove('selected');
+          this.mapBtn.classList.add('selected');
+          this.cardsTeKoop.classList.remove('active-te-koop');
+          this.cardsTeKoop.classList.add('hidden-te-koop');
+          this.mapTeKoop.classList.remove('hidden-te-koop');
+          this.mapTeKoop.classList.add('active-te-koop');
+        })
+      }
+
+      
     },
     placePointer(coordinates, page = 'other') {
       const map = new mapboxgl.Map({
@@ -379,6 +410,105 @@
               "icon-size": 0.25
             }
           });
+        });
+      });
+    },
+    placePointersTeKoop() {
+      const coordinatesFirst = database.premises[0].address.coordinates;
+      const arrayFeatures = [];
+
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 10,
+        center: [coordinatesFirst.lng, coordinatesFirst.lat], // , 
+      });
+
+      database.premises.forEach((item, index) => {
+        this.generateThumbPath(item.properties[0].media);
+
+        // console.log(`premise ${++index} = ${item.title}`)
+        // item.media !== undefined ? console.log(this.generateThumbPath(item.media)) : console.log('null');
+
+        if (item.properties.length == 1) {
+          // 1 LOT
+          item.properties[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ', item.properties[0].price);
+        } else {
+          // MEERDERE LOTEN
+          this.meta = `${item.properties.length} loten`;
+        }
+
+        tempStr = `
+          <a class="related-card-box" href="./${item.slug}/">
+            <div class="related-card">
+              <div class="related-image">
+                <img src="${this.tumbPath.replace('../', '../../static/')}" alt="">
+                <div class="meta">
+                  ${this.meta}
+                </div>
+              </div>
+              <div class="related-body p-16">
+                <h3>${item.title}</h3>
+                <p>${item.intro}</p>
+              </div>
+            </div>
+          </a>
+        `;
+
+        if (item.address.coordinates !== undefined) {
+          arrayFeatures.push({
+            "type": "Feature",
+            "properties": {
+              "description": tempStr,
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [item.address.coordinates.lng, item.address.coordinates.lat],
+            }
+          });
+        }
+      });
+
+
+      map.on('load', function() {
+        map.loadImage('../static/images/marker-tekoop.png', function(error, image) {
+        if (error) throw error;
+        map.addImage('marker', image);
+          
+
+          map.addLayer({
+            "id": "premises",
+            "type": "symbol",
+            "source": {
+              "type": "geojson",
+              "data": {
+                "type": "FeatureCollection",
+                "features": arrayFeatures,
+              }
+            },
+            "layout": {
+              "icon-image": "marker",
+              "icon-size": 0.25
+            }
+          });
+
+          map.on('click', 'premises', function(e) {
+            console.log(e)
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description = e.features[0].properties.description;
+             
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+             
+            new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+            });
         });
       });
     },
@@ -444,8 +574,8 @@
                   </div>
               </div>
               <div class="card-body p-16">
-                  <h3>Nieuwbouwwoning wingene</h3>
-                  <p>Nieuwbouwwoning gelegen in een bosrijke, rustige omgeving.</p>
+                  <h3>${item.title}</h3>
+                  <p>${item.intro}</p>
               </div>
             </a>
           `

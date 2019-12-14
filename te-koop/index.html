@@ -49,7 +49,7 @@
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 nav-container">
                         <nav>
                             <ul>
-                                <li><a href="../te-koop/">Te koop</a></li>
+                                <li><a class="active" href="../te-koop/">Te koop</a></li>
                                 <li><a href="#">Te huur</a></li>
                                 <li><a href="#">Realisaties</a></li>
                                 <li><a href="#">Het bedrijf</a></li>
@@ -81,7 +81,7 @@
             </div>
         </div>
     </header>
-    <main class="main-alt">
+    <main>
         <section data-section="card-filter" class="py-30">
             <form class="container">
                 <div class="row filter" data-collapse-group="cardsFilterGroup">
@@ -150,7 +150,13 @@
         </section>
         <section data-section="cards-property" class="mt-50">
             <div class="container flex-grid-wrapper">
+                <div class="te-koop-nav">
+                    <a href="" class="selected raster-btn"><i class="fas fa-th-large"></i>  Rasterweergave</a><a href="" class="map-btn"><i class="fas fa-map-marked-alt"></i> Kaartweergave</a>
+                </div>
                 <div data-label="te-koop-items" class="flex-grid"></div>
+                <div class="map-te-koop hidden-te-koop">
+                    <div class="map" id="map"></div>
+                </div>
             </div>
         </section>
     </main>
