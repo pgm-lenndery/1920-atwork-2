@@ -7,9 +7,9 @@
   - [ ] Dynamisch ingeladen
   - [ ] Opmaak
 
-- [ ] Te koop
-  - [ ] Dynamisch ingeladen
-  - [ ] Opmaak
+- [x] Te koop
+  - [x] Dynamisch ingeladen
+  - [x] Opmaak
 
 - [x] Detail
   - [x] Dynamisch ingeladen
@@ -23,6 +23,6 @@
 
 - [ ] Lazy loading
 - [ ] Animatie scrollen content tonen
-- [ ] Te koop
-  - [ ] Filteren
-  - [ ] Mapbox marker en pop up
+- [x] Te koop
+  - [x] Filteren
+  - [x] Mapbox marker en pop up
