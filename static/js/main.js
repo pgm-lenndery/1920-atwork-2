@@ -198,6 +198,7 @@
         content: `
         `,
         headImage: '../../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
+        isFeatured: true,
         propertiesBuilding: [
           
         ],
@@ -225,6 +226,7 @@
         content: `
         `,
         headImage: '../../images/te-koop/oostveld/oostveld-01.jpg',
+        isFeatured: true,
         propertiesBuilding: [
           
         ],
@@ -270,6 +272,7 @@
         content: `
         `,
         headImage: '../../images/te-koop/doomkerke/doomkerkerpano-600x445.JPG',
+        isFeatured: true,
         propertiesBuilding: [
           
         ],
@@ -298,6 +301,93 @@
         }],
         city: 'ruislede',
       },
+      {
+        title: 'luxevilla in moerbrugge',
+        intro: 'geklasseerde schuur in een nieuw jasje',
+        slug: '',
+        content: `
+        `,
+        headImage: 'static/images/realisaties/moerbrugge.jpg',
+        isFeatured: false,
+        isRealized: true,
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          
+        },
+        properties: [
+          {
+            price: 292500,
+            sold: true,
+            media: [
+              {
+                src: '../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
+                isThumb: true,
+                note: '',
+              },
+            ],
+          }
+        ],
+      },
+      {
+        title: 'landelijke woning in zwevezele',
+        intro: 'prachtige landelijke woning met hoogwaardige afwerking en materialen.',
+        slug: '',
+        content: `
+        `,
+        headImage: 'static/images/realisaties/zwevezele.jpg',
+        isFeatured: false,
+        isRealized: true,
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          
+        },
+        properties: [
+          {
+            price: 292500,
+            sold: true,
+            media: [
+              {
+                src: '../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
+                isThumb: true,
+                note: '',
+              },
+            ],
+          }
+        ],
+      },
+      {
+        title: 'gekoppelde woning doomkerke',
+        intro: '2 ruime halfopen pastorijwoningen',
+        slug: '',
+        content: `
+        `,
+        headImage: 'static/images/realisaties/doomkerke.jpg',
+        isFeatured: false,
+        isRealized: true,
+        propertiesBuilding: [
+          
+        ],
+        address: {
+          
+        },
+        properties: [
+          {
+            price: 292500,
+            sold: true,
+            media: [
+              {
+                src: '../images/te-koop/wingene-pastorie/IMG_9624-cover-761x900.jpg',
+                isThumb: true,
+                note: '',
+              },
+            ],
+          }
+        ],
+      },
     ]
   }
 
@@ -317,6 +407,8 @@
       }
 
       this.generateItemsTekoop();
+      this.generateItemsFeatured();
+      this.generateItemsRealized();
       this.filterPremises()
     },
     /**
@@ -336,6 +428,8 @@
       this.mapTeKoop = document.querySelector('.map-te-koop');
       this.rasterBtn = document.querySelector('.raster-btn');
       this.mapBtn = document.querySelector('.map-btn');
+      this.containerCardsFeatured = document.querySelector('[data-label="premises-featured"]')
+      this.containerCardsRealized = document.querySelector('[data-label="premises-realizations-items"]')
 
       const bodyElement = document.body;
       const btnToggleElement = document.querySelector('.btn-hamburger');
@@ -369,9 +463,7 @@
           this.mapTeKoop.classList.remove('hidden-te-koop');
           this.mapTeKoop.classList.add('active-te-koop');
         })
-      }
-
-      
+      }  
     },
     /**
      * Place pointer on mini map
@@ -528,33 +620,25 @@
       let tempStr = '', meta, tumbPath = '';
       if (this.containerCardsPremises !== null) {
         database.premises.forEach((item, index) => {
-          this.generateThumbPath(item.properties[0].media);
-
-          // console.log(`premise ${++index} = ${item.title}`)
-          // item.media !== undefined ? console.log(this.generateThumbPath(item.media)) : console.log('null');
-
-          if (item.properties.length == 1) {
-            // 1 LOT
-            item.properties[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ', item.properties[0].price);
-          } else {
-            // MEERDERE LOTEN
-            this.meta = `${item.properties.length} loten`;
+          if (item.isRealized !== true) {
+            this.generateThumbPath(item.properties[0].media);
+            this.determinePropMeta(item.properties);
+  
+            tempStr += `
+              <a class="flex-grid-item card premise" href="${item.slug !== undefined ? item.slug : ''}" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
+                <div class="card-head">
+                    <img data-lazy="${this.tumbPath.replace('../', '../static/')}" alt="">
+                    <div class="meta">
+                      ${this.meta}
+                    </div>
+                </div>
+                <div class="card-body p-16">
+                    <h3>${item.title}</h3>
+                    <p>${item.intro}</p>
+                </div>
+              </a>
+            `
           }
-
-          tempStr += `
-            <a class="flex-grid-item card premise" href="${item.slug !== undefined ? item.slug : ''}" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
-              <div class="card-head">
-                  <img data-lazy="${this.tumbPath.replace('../', '../static/')}" alt="">
-                  <div class="meta">
-                    ${this.meta}
-                  </div>
-              </div>
-              <div class="card-body p-16">
-                  <h3>${item.title}</h3>
-                  <p>${item.intro}</p>
-              </div>
-            </a>
-          `
         });
         this.containerCardsPremises.innerHTML = tempStr;
       }
@@ -562,37 +646,55 @@
 
     generateItemsFeatured() {
       let tempStr = '', meta, tumbPath = '';
-      if (this.containerCardsPremises !== null) {
+      if (this.containerCardsFeatured !== null) {
         database.premises.forEach((item, index) => {
-          this.generateThumbPath(item.properties[0].media);
-
-          // console.log(`premise ${++index} = ${item.title}`)
-          // item.media !== undefined ? console.log(this.generateThumbPath(item.media)) : console.log('null');
-
-          if (item.properties.length == 1) {
-            // 1 LOT
-            item.properties[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ', item.properties[0].price);
-          } else {
-            // MEERDERE LOTEN
-            this.meta = `${item.properties.length} loten`;
+          if (item.isFeatured == true) {
+            this.generateThumbPath(item.properties[0].media);
+            this.determinePropMeta(item.properties);
+  
+            tempStr += `
+              <a class="flex-grid-item card premise" href="./${item.slug}/" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
+                <div class="card-head">
+                    <img data-lazy="${this.tumbPath.replace('../', '../static/')}" alt="">
+                    <div class="meta">
+                      ${this.meta}
+                    </div>
+                </div>
+                <div class="card-body p-16">
+                    <h3>${item.title}</h3>
+                    <p>${item.intro}</p>
+                </div>
+              </a>
+            `
           }
-
-          tempStr += `
-            <a class="flex-grid-item card premise" href="./${item.slug}/" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
-              <div class="card-head">
-                  <img data-lazy="${this.tumbPath.replace('../', '../static/')}" alt="">
-                  <div class="meta">
-                    ${this.meta}
-                  </div>
-              </div>
-              <div class="card-body p-16">
-                  <h3>${item.title}</h3>
-                  <p>${item.intro}</p>
-              </div>
-            </a>
-          `
         });
-        this.containerCardsPremises.innerHTML = tempStr;
+        this.containerCardsFeatured.innerHTML = tempStr;
+      }
+    },
+    generateItemsRealized() {
+      let tempStr = '', meta, tumbPath = '';
+      if (this.containerCardsRealized !== null) {
+        database.premises.forEach((item, index) => {
+          if (item.isRealized == true) {
+            this.determinePropMeta(item.properties);
+  
+            tempStr += `
+              <a class="flex-grid-item card premise" href="./${item.slug}/" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
+                <div class="card-head">
+                    <img data-lazy="${item.headImage}" alt="">
+                    <div class="meta">
+                      ${this.meta}
+                    </div>
+                </div>
+                <div class="card-body p-16">
+                    <h3>${item.title}</h3>
+                    <p>${item.intro}</p>
+                </div>
+              </a>
+            `
+          }
+        });
+        this.containerCardsRealized.innerHTML = tempStr;
       }
     },
     /**
@@ -733,22 +835,10 @@
      */
     getRelatedItems(current) {
       const filteredPremises = database.premises.filter(building => building.slug !== current);
-
-      let tempStr = '', meta, tumbPath = '';
-          
+      let tempStr = '', meta, tumbPath = '';   
       filteredPremises.forEach(item => {
-
-        console.log(item);
-
-        this.generateThumbPath(item.properties[0].media);
-
-        if (item.properties.length == 1) {
-          // 1 LOT
-          item.properties[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ', item.properties[0].price);
-        } else {
-          // MEERDERE LOTEN
-          this.meta = `${item.properties.length} loten`;
-        }
+        this.generateThumbPath(item.properties[0].media)
+        this.determinePropMeta(item.properties);
 
         tempStr += `
           <a class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 related-card-box" href="./${item.slug}/">
@@ -779,6 +869,7 @@
     },
 
     priceFormat(prepend = '', input, append = '') {
+      // Concat prepend arument + the given number (split number in parts of 3 digits and join by '.') + prepend argument
       return prepend + input.toString().match(/.{1,3}/g).join('.') + append;
     },
 
@@ -801,12 +892,15 @@
     },
 
     filterPremises() {
+      // Getting all the cards
       const cardsPremises = document.querySelectorAll('.premise');
-      let cardPremiseSearchString = '', 
-          searchString = [this.getUrlVar('premise_type'),this.getUrlVar('premise_city'),this.getUrlVar('premise_price')];
+
+      // Setting variables & getting parameters from window href
+      let cardPremiseSearchString = '', searchString = [this.getUrlVar('premise_type'),this.getUrlVar('premise_city'),this.getUrlVar('premise_price')];
+      
+      // Check for every card if data-filter argument data contains parameters from window href
       cardsPremises.forEach((item) => {
         cardPremiseSearchString = item.dataset.filter.split(', ');
-        // check if data filer att includes searchstring
         if (searchString.some(v=> cardPremiseSearchString.indexOf(v) !== -1) || window.location.href.includes('?') == false) {
           return
         } else if (searchString.some(v=> cardPremiseSearchString.indexOf(v) == -1) && searchString !== [false, false, false]) {
@@ -816,15 +910,33 @@
     },
 
     getUrlVar(variable) {
+      // Getting window href
       var url = window.location.search.substring(1);
+
+      // Create array from href parameters
       var vars = url.split("&");
       for (var i = 0; i < vars.length; i++) {
+        // split parameter from parameter name
         var pair = vars[i].split("=");
+
+        // if parameter name is equal to argument in function name, return parameter data
         if (pair[0] == variable) {
           return pair[1];
         }
       }
+
+      // Otherwise return false
       return (false);
+    },
+
+    determinePropMeta(input) {
+      if (input.length == 1) {
+        // if only and property is sold, return string otherwise return price 
+        input[0].sold ? this.meta = 'verkocht' : this.meta = this.priceFormat('€ ', input[0].price);
+      } else {
+        // if multiple properties return amount of properties
+        this.meta = `${input.length} loten`;
+      }
     }
   }
 
