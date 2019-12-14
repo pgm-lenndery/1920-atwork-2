@@ -505,7 +505,6 @@
           });
 
           map.on('click', 'premises', function(e) {
-            console.log(e)
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = e.features[0].properties.description;
              
@@ -737,9 +736,6 @@
       let tempStr = '', meta, tumbPath = '';
           
       filteredPremises.forEach(item => {
-
-        console.log(item);
-
         this.generateThumbPath(item.properties[0].media);
 
         if (item.properties.length == 1) {
