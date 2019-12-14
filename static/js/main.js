@@ -454,7 +454,7 @@
           <a class="related-card-box" href="./${item.slug}/">
             <div class="related-card">
               <div class="related-image">
-                <img data-lazy="${this.tumbPath.replace('../', '../../static/')}" alt="">
+                <img src="${this.tumbPath.replace('../', '../../static/')}" alt="">
                 <div class="meta">
                   ${this.meta}
                 </div>
