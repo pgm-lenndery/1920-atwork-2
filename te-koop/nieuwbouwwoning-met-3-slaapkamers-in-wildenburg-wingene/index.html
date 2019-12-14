@@ -35,7 +35,7 @@
                     <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                         <div class="logo">
                             <a href="../../">
-                                <img src="../../static/images/logo/logo_talloen_wit.svg" alt="logo Matthias Talloen">
+                                <img data-lazy="../../static/images/logo/logo_talloen_wit.svg" alt="logo Matthias Talloen">
                             </a>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 nav-container">
                         <nav>
                             <ul>
-                                <li><a href="../">Te koop</a></li>
+                                <li><a class="active" href="../">Te koop</a></li>
                                 <li><a href="#">Te huur</a></li>
                                 <li><a href="#">Realisaties</a></li>
                                 <li><a href="#">Het bedrijf</a></li>
@@ -59,25 +59,29 @@
                         <hr>
                     </div>
                 </div>
-                <div class="row header-sub">
+                <div class="row">
                     <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                         <div data-section="hero">
                             <div class="breadcrumb">
                                 <p><a href="../../">Home</a><span class="first"></span><a href="../">Te koop</a><span data-label="detail-breadcrumb"></span></p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                        <div class="page-info">
                             <h1 data-label="detail-title"></h1>
                             <h4 data-label="detail-intro"></h4>
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                       <div class="price">
-                            <div class="price-info">
-                                <p>Vraagprijs</p>
-                                <p data-label="detail-price">Vraagprijs</p>
-                            </div>
-                       </div>
+                        <div class="price">
+                            <p class="price-title">Vraagprijs</p>
+                            <p data-label="detail-price"></p>
+                        </div>
                     </div>
-                </div>
+                </div>    
             </div>
         </div>
     </header>
@@ -85,32 +89,42 @@
         <div class="detail-premise">
         </div>
         <div class="container">
-            <div class="row detail-content" data-label="detail-content">
-                
-            <div class="row images">
-
+            <div class="row detail-content" data-label="detail-content"></div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <h3 class="detail-title text-center">Meer afbeeldingen</h3>
+                </div>
             </div>
-            <div class="row related">
+            <div class="row detail-images" data-label="detail-images"></div>
+        </div>
 
+        <div class="related-back">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h3 class="detail-title text-center">Enkele andere projecten</h3>
+                    </div>
+                </div>
+                <div class="row related">
+
+                </div>
             </div>
         </div>
     </main>
     <footer>
         <div class="container">
             <div class="row justify-content-between" data-section="footer-info">
-                <div class="col-12 col-md mb-20 mb-md-0 d-flex justify-content-center">
-                    <img src="../static/images/logo/logo_talloen_footer.svg" alt="" width="210">
+                <div class="col">
+                    <img data-lazy="../../static/images/logo/logo_talloen_footer.svg" alt="" width="210">
                 </div>
                 <div class="col-12 col-md mb-16 mb-md-0 text-center text-md-left">
                     Hazelaarstraat 4, 8020 Oostkamp<br>
                     0495 25 22 63 – info@matthiastalloen.be<br>
                     BE 0896.739.858                   
                 </div>
-                <div class="col-12 col-md-auto d-flex align-items-center justify-content-center">
-                    <div>
-                        <img class="mr-40" src="../static/images/logo/logo_bouwunie.svg" alt="" width="143">
-                        <img src="../static/images/logo/logo_confedereatie-bouw.svg" alt="" width="139">
-                    </div>
+                <div class="col-auto d-flex align-items-center">
+                    <img class="mr-40" data-lazy="../../static/images/logo/logo_bouwunie.svg" alt="" width="143">
+                    <img data-lazy="../../static/images/logo/logo_confedereatie-bouw.svg" alt="" width="139">
                 </div>
             </div>
             <div class="row">
@@ -133,7 +147,8 @@
             </div>
         </div>
     </footer>
-    <script src="../static/js/main.js"></script>
-    <script src="../static/js/collapse.js"></script>
+    <script src="../../static/js/map-config.js"></script>
+    <script src="../../static/js/main.js"></script>
+    <script src="../../static/js/lazy-loading.js"></script>
 </body>
 </html>

@@ -2279,6 +2279,11 @@ header .main-nav nav ul li a:hover {
   opacity: 1;
 }
 
+header .main-nav nav ul li a.active {
+  color: #fff;
+  opacity: 1;
+}
+
 header .main-nav hr {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -2286,8 +2291,20 @@ header .main-nav hr {
   padding-bottom: 10px;
 }
 
+.page-info h1 {
+  color: #fff;
+}
+
+.page-info h4 {
+  font-size: 1.285rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #fff;
+}
+
 .breadcrumb {
   margin-bottom: 20px;
+  text-transform: none;
 }
 
 .breadcrumb p {
@@ -2330,6 +2347,14 @@ header .main-nav hr {
   }
   header .btn-hamburger-container {
     display: block;
+  }
+  header .main-nav .navigation {
+    background: var(--accent-main);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
   }
   header .main-nav .navigation .line-nav-hide {
     display: none;
@@ -4873,6 +4898,10 @@ header .main-nav hr {
   background-image: url(../images/ornament_wit.svg);
 }
 
+.alt-main {
+  margin: 50px 0;
+}
+
 .map-contact {
   width: 100%;
   height: 410px;
@@ -4986,27 +5015,20 @@ textarea {
   }
 }
 
-.header-sub {
-  height: 120px;
+h3.detail-title {
+  font-weight: 700;
+  font-size: 2.1rem;
+  margin-top: 40px;
+  margin-bottom: 1.5rem;
+  color: var(--accent-main);
 }
 
-.header-sub .price {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.header-sub .price div {
-  position: absolute;
-  bottom: 15px;
-}
-
-.header-sub .price div p {
+.price p {
   color: #fff;
   font-size: 1.125rem;
 }
 
-.header-sub .price div p:last-child {
+.price p:last-child {
   font-size: 2rem;
   font-weight: 700;
 }
@@ -5048,13 +5070,6 @@ textarea {
   left: -25px;
 }
 
-.detail-head-pic .stripes div {
-  width: 50px;
-  height: 10px;
-  margin-bottom: 10px;
-  background: #fff;
-}
-
 .detail-description p, .detail-description ul {
   margin-bottom: 1rem;
 }
@@ -5071,6 +5086,11 @@ textarea {
 
 .detail-description ul {
   margin-left: 40px;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
 }
 
 .address-info {
@@ -5097,6 +5117,269 @@ textarea {
 .detail-properties table tbody tr th, .detail-properties table tbody tr td {
   border-bottom: 0.1px solid #dedede;
   padding: 0.375rem;
+}
+
+.detail-card {
+  display: block;
+  margin-top: 20px;
+}
+
+.detail-card div.detail-image {
+  position: relative;
+}
+
+.detail-card div.detail-image::before {
+  position: absolute;
+  left: -15.5px;
+  top: 10px;
+  display: block;
+  content: " ";
+  background-image: url(../images/ornament_rood.svg);
+  width: 31px;
+  height: 55px;
+}
+
+.detail-card div.detail-image img {
+  width: 100%;
+}
+
+.detail-card div.detail-image .note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  background: var(--accent-main);
+  padding: 10px 14px;
+}
+
+.related-back {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  background: #f8f8f8;
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+
+.related-back h3 {
+  margin-top: 0;
+}
+
+.related-card-box {
+  display: block;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+.related-card-box:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.related-card {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.17);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.related-card .related-image {
+  position: relative;
+}
+
+.related-card .related-image::before {
+  position: absolute;
+  left: -15.5px;
+  top: 10px;
+  display: block;
+  content: " ";
+  background-image: url(../images/ornament_wit.svg);
+  width: 31px;
+  height: 55px;
+}
+
+.related-card .related-image img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.related-card .related-image .meta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent-main);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.related-card .related-body {
+  min-height: 91px;
+  margin-top: -7px;
+  background: var(--accent-main);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.related-card .related-body h3 {
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.related-card .related-body p {
+  text-transform: none;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .price p {
+    color: #fff;
+    font-size: 1.125rem;
+  }
+  .price p.price-title {
+    display: none;
+  }
+  .price p:last-child {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .detail-properties table {
+    text-align: left;
+    border-collapse: collapse;
+    background: #fff;
+    width: 100%;
+  }
+  .detail-properties table tbody tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .detail-properties table tbody tr th {
+    border: none;
+  }
+}
+
+body {
+  height: auto;
+}
+
+.map-te-koop {
+  margin: 50px 0;
+}
+
+.map-te-koop .map {
+  width: 100%;
+  height: 600px;
+}
+
+.te-koop-nav {
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.te-koop-nav a {
+  margin-left: 30px;
+  color: #aaa;
+}
+
+.te-koop-nav a i {
+  margin-right: 5px;
+}
+
+.te-koop-nav a.selected {
+  color: #696969;
+}
+
+.hidden-te-koop {
+  height: 0px;
+  opacity: 0;
+}
+
+.hidden-te-koop .map {
+  height: 0;
+}
+
+.active-te-koop {
+  opacity: 1;
+  display: block;
+}
+
+.mapboxgl-popup {
+  max-width: 350px !important;
+}
+
+.mapboxgl-popup-content {
+  padding: 0;
+}
+
+.related-card {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.17);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.related-card .related-image {
+  position: relative;
+}
+
+.related-card .related-image::before {
+  position: absolute;
+  left: -15.5px;
+  top: 10px;
+  display: block;
+  content: " ";
+  background-image: url(../images/ornament_rood.svg);
+  width: 31px;
+  height: 55px;
+}
+
+.related-card .related-image img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.related-card .related-image .meta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent-main);
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.related-card .related-body {
+  min-height: 91px;
+  margin-top: -7px;
+  background: #fff;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: #fff;
+}
+
+.related-card .related-body h3 {
+  line-height: 1;
+  margin-bottom: 5px;
+  color: var(--accent-main);
+}
+
+.related-card .related-body p {
+  text-transform: none;
+  line-height: 1.2;
+  color: var(--accent-main);
 }
 
 * {

@@ -7,22 +7,22 @@
   - [ ] Dynamisch ingeladen
   - [ ] Opmaak
 
-- [ ] Te koop
-  - [ ] Dynamisch ingeladen
-  - [ ] Opmaak
+- [x] Te koop
+  - [x] Dynamisch ingeladen
+  - [x] Opmaak
 
-- [ ] Detail
-  - [ ] Dynamisch ingeladen
-  - [ ] Opmaak
-  - [ ] Mapbox kaart tonen
+- [x] Detail
+  - [x] Dynamisch ingeladen
+  - [x] Opmaak
+  - [x] Mapbox kaart tonen
 
-- [ ] Contact
-  - [ ] Opmaak
+- [x] Contact
+  - [x] Opmaak
 
 ### Excelleren
 
 - [ ] Lazy loading
 - [ ] Animatie scrollen content tonen
-- [ ] Te koop
-  - [ ] Filteren
-  - [ ] Mapbox marker en pop up
+- [x] Te koop
+  - [x] Filteren
+  - [x] Mapbox marker en pop up

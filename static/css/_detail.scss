@@ -1,25 +1,19 @@
-.header-sub {
-  height: 120px;
+h3.detail-title {
+  font-weight: 700;
+  font-size: 2.1rem;
+  margin-top: 40px;
+  margin-bottom: 1.5rem;
+  color: var(--accent-main)
+}
 
-  .price {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    
+.price {
+  p {
+    color: #fff;
+    font-size: 1.125rem;
 
-    div {
-      position: absolute;
-      bottom: 15px;
-
-      p {
-        color: #fff;
-        font-size: 1.125rem;
-
-        &:last-child {
-          font-size: 2rem;
-          font-weight: 700;
-        }
-      }
+    &:last-child {
+      font-size: 2rem;
+      font-weight: 700;
     }
   }
 }
@@ -58,13 +52,6 @@
     position: absolute;
     top: 5px;
     left: -25px;
-
-    div {
-      width: 50px;
-      height: 10px;
-      margin-bottom: 10px;
-      background: #fff;
-    }
   }
 }
 
@@ -89,6 +76,11 @@
   ul {
     margin-left: 40px;
   }
+}
+
+.map {
+  width: 100%;
+  height: 400px;
 }
 
 .address-info {
@@ -123,4 +115,158 @@
       }
     }
   }
+}
+
+.detail-card {
+  display: block;
+  margin-top: 20px;
+
+  div.detail-image {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -15.5px;
+      top: 10px;
+      display: block;
+      content: " ";
+      background-image: url(../images/ornament_rood.svg);
+      width: 31px;
+      height: 55px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .note {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+      background: var(--accent-main);
+      padding: 10px 14px;
+    }
+  }
+}
+
+.related-back {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  background: #f8f8f8;
+  padding-top: 20px;
+  padding-bottom: 70px;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.related-card-box {
+  display: block;
+  transition: var(--transition);
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.related-card {
+  box-shadow: 0 0 20px rgba(0,0,0,.17);
+  position: relative;
+  margin-bottom: 20px;
+  
+  .related-image {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -15.5px;
+      top: 10px;
+      display: block;
+      content: " ";
+      background-image: url(../images/ornament_wit.svg);
+      width: 31px;
+      height: 55px;
+    }
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .meta {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--accent-main);
+      padding: 10px 14px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+    }
+  }
+
+  .related-body {
+    min-height: 91px;
+    margin-top: -7px;
+    background: var(--accent-main);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    color: #fff;
+    
+
+    h3 {
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    p {
+      text-transform: none;
+      line-height: 1.2;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .price {
+    p {
+      color: #fff;
+      font-size: 1.125rem;
+
+      &.price-title {
+        display: none;
+      }
+  
+      &:last-child {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .detail-properties {
+    table {
+      text-align: left;
+      border-collapse: collapse;
+      background: #fff;
+      width: 100%;
+      
+  
+      tbody {
+        tr {
+          display: flex;
+          flex-direction: column;
+          
+          th {
+            border: none;
+          }
+           
+        }
+      }
+    }
+  }
+  
 }

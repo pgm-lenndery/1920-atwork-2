@@ -320,6 +320,11 @@ header {
             &:hover {
               opacity: 1;
             }
+
+            &.active {
+              color: #fff;
+              opacity: 1;
+            }
           }
         }
       }
@@ -334,8 +339,23 @@ header {
   }
 }
 
+.page-info {
+  h1 {
+    color: #fff;
+
+  }
+
+  h4 {
+    font-size: 1.285rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+  }
+}
+
 .breadcrumb {
   margin-bottom: 20px;
+  text-transform: none;
   p {
     font-size: 1rem;
     a {
@@ -382,6 +402,11 @@ header {
     .main-nav {
 
       .navigation {
+        background: var(--accent-main);
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 999;
 
         .line-nav-hide {
           display: none;

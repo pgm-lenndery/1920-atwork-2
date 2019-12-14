@@ -34,7 +34,7 @@
                     <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                         <div class="logo">
                             <a href="/">
-                                <img src="../static/images/logo/logo_talloen_wit.svg" alt="logo Matthias Talloen">
+                                <img data-lazy="../static/images/logo/logo_talloen_wit.svg" alt="logo Matthias Talloen">
                             </a>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                 <li><a href="#">Te huur</a></li>
                                 <li><a href="#">Realisaties</a></li>
                                 <li><a href="#">Het bedrijf</a></li>
-                                <li><a href="../contact/">Contact</a></li>
+                                <li><a class="active" href="../contact/">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -64,6 +64,12 @@
                             <div class="breadcrumb">
                                 <p><a href="../">Home</a><span>Contact</span></p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                        <div class="page-info">
                             <h1>Contact</h1>
                         </div>
                     </div>
@@ -71,7 +77,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="alt-main">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -120,7 +126,7 @@
         <div class="container">
             <div class="row justify-content-between" data-section="footer-info">
                 <div class="col-12 col-md mb-20 mb-md-0 d-flex justify-content-center">
-                    <img src="../static/images/logo/logo_talloen_footer.svg" alt="" width="210">
+                    <img data-lazy="../static/images/logo/logo_talloen_footer.svg" alt="" width="210">
                 </div>
                 <div class="col-12 col-md mb-16 mb-md-0 text-center text-md-left">
                     Hazelaarstraat 4, 8020 Oostkamp<br>
@@ -128,10 +134,8 @@
                     BE 0896.739.858                   
                 </div>
                 <div class="col-12 col-md-auto d-flex align-items-center justify-content-center">
-                    <div>
-                        <img class="mr-40" src="../static/images/logo/logo_bouwunie.svg" alt="" width="143">
-                        <img src="../static/images/logo/logo_confedereatie-bouw.svg" alt="" width="139">
-                    </div>
+                    <img class="mr-40" data-lazy="../static/images/logo/logo_bouwunie.svg" alt="" width="143">
+                    <img data-lazy="../static/images/logo/logo_confedereatie-bouw.svg" alt="" width="139">
                 </div>
             </div>
             <div class="row">
@@ -156,5 +160,6 @@
     </footer>
     <script src="../static/js/main.js"></script>
     <script src="../static/js/collapse.js"></script>
+    <script src="../static/js/lazy-loading.js"></script>
 </body>
 </html>
