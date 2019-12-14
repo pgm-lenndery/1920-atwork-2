@@ -139,12 +139,15 @@ small, .small {
 .d-flex {display:flex}
 .flex-col {flex-direction: column;}
 .justify-content-between {justify-content: space-between;}
+.justify-content-center {justify-content: center;}
+.justify-content-start {justify-content: flex-start;}
+.justify-content-end {justify-content: flex-end;}
 
 .align-items-center {align-items: center;};
 .align-items-end {align-items: flex-end}
 
 /* MARGIN */
-$sizes: 0, 8, 10, 16, 24, 30, 40, 50, 70, 90, 100;
+$sizes: 0, 8, 10, 16, 20, 24, 30, 40, 50, 60, 90, 100;
 @each $size in $sizes {
   .m-#{$size} {
     margin: #{$size}px;
@@ -228,6 +231,9 @@ main {
 }
 
 footer {
+  margin-top: 60px;
+  padding-bottom: 50px;
+
   [data-section="footer-info"] {
       color: var(--accent-main)
   }
@@ -241,7 +247,6 @@ footer {
   }
 }
 
-/* MEDIA QUERIES */
 .top-bar {
   padding: 5px 0;
   background: var(--accent-main-dark);
@@ -360,6 +365,7 @@ header {
   }
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .top-bar {
     display: none;
@@ -428,9 +434,16 @@ header {
   .container {
       max-width: 540px;
   }
+  /* FLEXBOX */
+  .justify-content-sm-center {justify-content: center;}
+  .justify-content-sm-start {justify-content: flex-start;}
+  .justify-content-sm-end {justify-content: flex-end;}
+
+  .text-sm-left {text-align: left;}
+  .text-sm-center {text-align: center;}
+  .text-sm-right {text-align: right;}
 
   /* MARGIN */
-  $sizes: 0, 8, 10, 16, 24, 30, 40, 50, 70, 90, 100;
   @each $size in $sizes {
     .m-sm-#{$size} {
       margin: #{$size}px;
@@ -487,8 +500,16 @@ header {
 }
 
 @media (min-width: 768px) {
+  /* FLEXBOX */
+  .justify-content-md-center {justify-content: center;}
+  .justify-content-md-start {justify-content: flex-start;}
+  .justify-content-md-end {justify-content: flex-end;}
+
+  .text-md-left {text-align: left;}
+  .text-md-center {text-align: center;}
+  .text-md-right {text-align: right;}
+
   /* MARGIN */
-  $sizes: 0, 8, 10, 16, 24, 30, 40, 50, 70, 90, 100;
   @each $size in $sizes {
     .m-md-#{$size} {
       margin: #{$size}px;
@@ -549,99 +570,111 @@ header {
 }
 
 @media (min-width: 992px) {
-/* MARGIN */
-$sizes: 0, 8, 10, 16, 24, 30, 40, 50, 70, 90, 100;
-@each $size in $sizes {
-  .m-lg-#{$size} {
-    margin: #{$size}px;
-  }
-  .ml-lg-#{$size} {
-    margin-left: #{$size}px;
-  }
-  .mr-lg-#{$size} {
-    margin-right: #{$size}px;
-  }
-  .mt-lg-#{$size} {
-    margin-top: #{$size}px;
-  }
-  .mb-lg-#{$size} {
-    margin-bottom: #{$size}px;
-  }
-  .mx-lg-#{$size} {
-    margin-left: #{$size}px;
-    margin-right: #{$size}px;
-  }
-  .my-lg-#{$size} {
-    margin-top: #{$size}px;
-    margin-bottom: #{$size}px;
+  /* FLEXBOX */
+  .justify-content-lg-center {justify-content: center;}
+  .justify-content-lg-start {justify-content: flex-start;}
+  .justify-content-lg-end {justify-content: flex-end;}
+
+  .text-lg-left {text-align: left;}
+  .text-lg-center {text-align: center;}
+  .text-lg-right {text-align: right;}
+
+  /* MARGIN */
+  @each $size in $sizes {
+    .m-lg-#{$size} {
+      margin: #{$size}px;
+    }
+    .ml-lg-#{$size} {
+      margin-left: #{$size}px;
+    }
+    .mr-lg-#{$size} {
+      margin-right: #{$size}px;
+    }
+    .mt-lg-#{$size} {
+      margin-top: #{$size}px;
+    }
+    .mb-lg-#{$size} {
+      margin-bottom: #{$size}px;
+    }
+    .mx-lg-#{$size} {
+      margin-left: #{$size}px;
+      margin-right: #{$size}px;
+    }
+    .my-lg-#{$size} {
+      margin-top: #{$size}px;
+      margin-bottom: #{$size}px;
+    }
+
   }
 
-}
+  /* PADDING */
+  @each $size in $sizes {
+      .p-lg-#{$size} {
+        padding: #{$size}px;
+      }
+      .pl-lg-#{$size} {
+        padding-left: #{$size}px;
+      }
+      .pr-lg-#{$size} {
+        padding-right: #{$size}px;
+      }
+      .pt-lg-#{$size} {
+        padding-top: #{$size}px;
+      }
+      .pb-lg-#{$size} {
+        padding-bottom: #{$size}px;
+      }
+      .px-lg-#{$size} {
+        padding-left: #{$size}px;
+        padding-right: #{$size}px;
+      }
+      .py-lg-#{$size} {
+        padding-top: #{$size}px;
+        padding-bottom: #{$size}px;
+      }
+  }
 
-/* PADDING */
-@each $size in $sizes {
-    .p-lg-#{$size} {
-      padding: #{$size}px;
-    }
-    .pl-lg-#{$size} {
-      padding-left: #{$size}px;
-    }
-    .pr-lg-#{$size} {
-      padding-right: #{$size}px;
-    }
-    .pt-lg-#{$size} {
-      padding-top: #{$size}px;
-    }
-    .pb-lg-#{$size} {
-      padding-bottom: #{$size}px;
-    }
-    .px-lg-#{$size} {
-      padding-left: #{$size}px;
-      padding-right: #{$size}px;
-    }
-    .py-lg-#{$size} {
-      padding-top: #{$size}px;
-      padding-bottom: #{$size}px;
-    }
-}
-
-.container {
-    max-width: 960px;
-}
+  .container {
+      max-width: 960px;
+  }
 }
 
 @media (min-width: 1200px) {
-/* MARGIN */
-$sizes: 0, 8, 10, 16, 24, 30, 40, 50, 70, 90, 100;
-@each $size in $sizes {
-  .m-xl-#{$size} {
-    margin: #{$size}px;
-  }
-  .ml-xl-#{$size} {
-    margin-left: #{$size}px;
-  }
-  .mr-xl-#{$size} {
-    margin-right: #{$size}px;
-  }
-  .mt-xl-#{$size} {
-    margin-top: #{$size}px;
-  }
-  .mb-xl-#{$size} {
-    margin-bottom: #{$size}px;
-  }
-  .mx-xl-#{$size} {
-    margin-left: #{$size}px;
-    margin-right: #{$size}px;
-  }
-  .my-xl-#{$size} {
-    margin-top: #{$size}px;
-    margin-bottom: #{$size}px;
-  }
+  /* FLEXBOX */
+  .justify-content-xl-center {justify-content: center;}
+  .justify-content-xl-start {justify-content: flex-start;}
+  .justify-content-xl-end {justify-content: flex-end;}
 
-}
+  /* MARGIN */
+  @each $size in $sizes {
+    .m-xl-#{$size} {
+      margin: #{$size}px;
+    }
+    .ml-xl-#{$size} {
+      margin-left: #{$size}px;
+    }
+    .mr-xl-#{$size} {
+      margin-right: #{$size}px;
+    }
+    .mt-xl-#{$size} {
+      margin-top: #{$size}px;
+    }
+    .mb-xl-#{$size} {
+      margin-bottom: #{$size}px;
+    }
+    .mx-xl-#{$size} {
+      margin-left: #{$size}px;
+      margin-right: #{$size}px;
+    }
+    .my-xl-#{$size} {
+      margin-top: #{$size}px;
+      margin-bottom: #{$size}px;
+    }
+
+  }
 
 /* PADDING */
-@each $size in $sizes {
+  @each $size in $sizes {
     .p-xl-#{$size} {
       padding: #{$size}px;
     }

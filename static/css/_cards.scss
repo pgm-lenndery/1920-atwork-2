@@ -2,9 +2,10 @@
 
 /* TE KOOP */
 .flex-grid-wrapper {
-  // Cards gutter
-  --grid-row-items-p: 40px;
-  overflow: visible;
+    // Cards gutter
+    --grid-row-items-p: 40px;
+    overflow: visible !important;
+    overflow-x: hidden;
 
   .flex-grid .flex-grid-item.card {
     box-shadow: 0 0 20px rgba(0,0,0,.17);
