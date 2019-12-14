@@ -319,7 +319,9 @@
       this.generateItemsTekoop();
       this.filterPremises()
     },
-
+    /**
+     * Getting elements and creating event listeners
+     */
     cacheElements() {
       this.mapContactElement = document.querySelector('.map-contact'); 
       this.cardsTeKoop = document.querySelector('[data-label="te-koop-items"');
@@ -371,6 +373,12 @@
 
       
     },
+    /**
+     * Place pointer on mini map
+     * 
+     * @param {Object} coordinates 
+     * @param {String} page 
+     */
     placePointer(coordinates, page = 'other') {
       const map = new mapboxgl.Map({
         container: 'map',
@@ -413,6 +421,10 @@
         });
       });
     },
+    /**
+     * Placing pointers on the map on page 'Te koop', creating a pop up when marker is clicked
+     * 
+     */
     placePointersTeKoop() {
       const coordinatesFirst = database.premises[0].address.coordinates;
       const arrayFeatures = [];
@@ -583,6 +595,9 @@
         this.containerCardsPremises.innerHTML = tempStr;
       }
     },
+    /**
+     * Generating the total view of the detail page.
+     */
     generateDetailTeKoop() {
       const linkArray = window.location.href.split('/');
 
@@ -629,6 +644,11 @@
       }
       
     },
+    /**
+     * Getting price of the premise.
+     * 
+     * @param {Array} props 
+     */
     getPriceBuilding (props) {
       let tempStr = '';
 
@@ -643,6 +663,11 @@
 
       return tempStr;
     },
+    /**
+     * Get properties of building
+     * 
+     * @param {Array} buildingProps 
+     */
     getPropsBuilding(buildingProps) {
       let tempStr = '';
       console.log(buildingProps)
@@ -657,6 +682,11 @@
 
       return tempStr;
     },
+    /**
+     * Getting all the images of the detail pages
+     * 
+     * @param {Array} media 
+     */
     getAllDetailImages(media) {
       let tempStr = '', note = '';
       let mediaFiltered = media.filter(image => !image.isThumb);
@@ -696,6 +726,11 @@
 
       return tempStr;
     },
+    /**
+     * Getting related items based on the current detail item
+     * 
+     * @param {String} current 
+     */
     getRelatedItems(current) {
       const filteredPremises = database.premises.filter(building => building.slug !== current);
 
@@ -734,9 +769,6 @@
       })
 
       return tempStr;
-    },
-    setDetailPointerMap() {
-      
     },
     generateThumbPath(input) {
       input.forEach(r => {
