@@ -11,13 +11,13 @@
   - [ ] Dynamisch ingeladen
   - [ ] Opmaak
 
-- [ ] Detail
-  - [ ] Dynamisch ingeladen
-  - [ ] Opmaak
-  - [ ] Mapbox kaart tonen
+- [x] Detail
+  - [x] Dynamisch ingeladen
+  - [x] Opmaak
+  - [x] Mapbox kaart tonen
 
-- [ ] Contact
-  - [ ] Opmaak
+- [x] Contact
+  - [x] Opmaak
 
 ### Excelleren
 
