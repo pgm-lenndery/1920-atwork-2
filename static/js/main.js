@@ -442,7 +442,7 @@
           <a class="related-card-box" href="./${item.slug}/">
             <div class="related-card">
               <div class="related-image">
-                <img src="${this.tumbPath.replace('../', '../../static/')}" alt="">
+                <img data-lazy="${this.tumbPath.replace('../', '../../static/')}" alt="">
                 <div class="meta">
                   ${this.meta}
                 </div>
@@ -532,7 +532,7 @@
           tempStr += `
             <a class="flex-grid-item card premise" href="${item.slug !== undefined ? item.slug : ''}" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
               <div class="card-head">
-                  <img src="${this.tumbPath.replace('../', '../static/')}" alt="">
+                  <img data-lazy="${this.tumbPath.replace('../', '../static/')}" alt="">
                   <div class="meta">
                     ${this.meta}
                   </div>
@@ -568,7 +568,7 @@
           tempStr += `
             <a class="flex-grid-item card premise" href="./${item.slug}/" data-filter="${this.listTypes(item.properties)}${item.city}, ${this.listPrices(item.properties)}">
               <div class="card-head">
-                  <img src="${this.tumbPath.replace('../', '../static/')}" alt="">
+                  <img data-lazy="${this.tumbPath.replace('../', '../static/')}" alt="">
                   <div class="meta">
                     ${this.meta}
                   </div>
@@ -599,7 +599,7 @@
         this.detailContent.innerHTML = `
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
             <div class="detail-head-pic"> 
-              <img src="${currentDetailItem.headImage}" alt="">
+              <img data-lazy="${currentDetailItem.headImage}" alt="">
             </div>
             <div class="detail-description">
                 ${currentDetailItem.content}
@@ -683,7 +683,7 @@
         tempStr += `
           <a class="detail-card" href="">
             <div class="detail-image">
-                <img src="${mediaFiltered[i].src}" alt="">
+                <img data-lazy="${mediaFiltered[i].src}" alt="">
                 ${note}
             </div>
           </a>
@@ -719,7 +719,7 @@
           <a class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 related-card-box" href="./${item.slug}/">
             <div class="related-card">
               <div class="related-image">
-                <img src="${this.tumbPath.replace('../', '../../static/')}" alt="">
+                <img data-lazy="${this.tumbPath.replace('../', '../../static/')}" alt="">
                 <div class="meta">
                   ${this.meta}
                 </div>
